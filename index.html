@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Maniram A · Portfolio</title>
+  <title>Maniram A · Fully Responsive Portfolio</title>
   <!-- Font Awesome 6 + devicon for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
@@ -29,26 +29,30 @@
     body.dark .skill-card,
     body.dark .edu-card,
     body.dark nav,
-    body.dark footer,
-    body.dark .contact-form {
+    body.dark footer {
       background: #1f2a3a;
       color: #e0e4f0;
     }
     body.dark .cert-card, 
     body.dark .internship-card,
     body.dark .project-card,
-    body.dark .resume-modal-content,
-    body.dark .contact-form input,
-    body.dark .contact-form textarea {
+    body.dark .resume-modal-content {
       background: #1e293b;
       border-color: #334155;
-      color: #e0e4f0;
     }
 
+    /* ===== RESPONSIVE CONTAINER ===== */
     .container {
+      width: 100%;
       max-width: 1200px;
       margin: 0 auto;
       padding: 1rem;
+    }
+    
+    @media (min-width: 640px) {
+      .container {
+        padding: 1.5rem;
+      }
     }
     
     @media (min-width: 768px) {
@@ -57,26 +61,26 @@
       }
     }
 
-    /* nav - mobile first */
+    /* ===== RESPONSIVE NAVIGATION ===== */
     nav {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0.8rem 1rem;
+      padding: 1rem;
       background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(8px);
       position: sticky;
       top: 0;
       z-index: 100;
       border-bottom: 1px solid rgba(0,0,0,0.05);
-      gap: 0.5rem;
+      gap: 0.8rem;
     }
     
-    @media (min-width: 480px) {
+    @media (min-width: 640px) {
       nav {
         flex-direction: row;
         justify-content: space-between;
-        padding: 1rem 1.5rem;
+        padding: 1rem 2rem;
       }
     }
     
@@ -90,18 +94,18 @@
       text-transform: capitalize;
     }
     
+    @media (min-width: 768px) {
+      .logo {
+        font-size: 1.9rem;
+      }
+    }
+    
     .nav-links {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.8rem;
+      gap: 0.8rem 1.2rem;
       align-items: center;
-    }
-    
-    @media (min-width: 480px) {
-      .nav-links {
-        gap: 1rem;
-      }
     }
     
     @media (min-width: 768px) {
@@ -120,7 +124,7 @@
       white-space: nowrap;
     }
     
-    @media (min-width: 480px) {
+    @media (min-width: 640px) {
       .nav-links a {
         font-size: 0.9rem;
       }
@@ -142,6 +146,7 @@
       background: #3b3fda;
       transition: width 0.2s ease;
     }
+    
     .nav-links a:hover::after {
       width: 100%;
     }
@@ -166,10 +171,10 @@
       border-color: #5f6b7a;
     }
 
-    /* Hero - mobile optimized */
+    /* ===== RESPONSIVE HERO ===== */
     .hero {
       min-height: auto;
-      padding: 1.5rem 0.5rem;
+      padding: 2rem 0.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -178,10 +183,10 @@
     }
     
     .profile-image {
-      width: 120px;
-      height: 120px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
-      margin: 0 auto 1rem;
+      margin: 0 auto 1.2rem;
       overflow: hidden;
       border: 4px solid white;
       box-shadow: 0 10px 25px -8px rgba(0,0,0,0.15);
@@ -238,12 +243,12 @@
     }
     
     .hero p {
-      font-size: 0.95rem;
+      font-size: 1rem;
       max-width: 600px;
       opacity: 0.8;
       text-transform: capitalize;
       padding: 0 0.5rem;
-      line-height: 1.4;
+      line-height: 1.5;
     }
     
     @media (min-width: 480px) {
@@ -258,7 +263,7 @@
       }
     }
 
-    /* Resume Button - mobile */
+    /* ===== RESPONSIVE RESUME BUTTON ===== */
     .resume-button-container {
       display: flex;
       justify-content: center;
@@ -269,9 +274,9 @@
       background: linear-gradient(145deg, #3b3fda, #c43f8c);
       color: white;
       border: none;
-      padding: 0.7rem 1.5rem;
+      padding: 0.8rem 1.8rem;
       border-radius: 50px;
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 600;
       cursor: pointer;
       display: inline-flex;
@@ -282,34 +287,28 @@
       border: 2px solid transparent;
     }
     
-    @media (min-width: 480px) {
-      .resume-button {
-        padding: 0.8rem 2rem;
-        font-size: 1.1rem;
-      }
-    }
-    
     @media (min-width: 768px) {
       .resume-button {
         padding: 1rem 2.5rem;
         font-size: 1.3rem;
+        gap: 10px;
       }
+    }
+    
+    .resume-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px -8px #3b3fda;
+      border-color: white;
     }
     
     .resume-button i {
-      font-size: 1rem;
-    }
-    
-    @media (min-width: 480px) {
-      .resume-button i {
-        font-size: 1.2rem;
-      }
+      font-size: 1.2rem;
     }
 
-    /* Section headings - mobile */
+    /* ===== RESPONSIVE SECTION TITLES ===== */
     .section-title {
-      font-size: 1.6rem;
-      margin: 1.5rem 0 1rem;
+      font-size: 1.8rem;
+      margin: 2rem 0 1.5rem;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -321,7 +320,6 @@
     @media (min-width: 480px) {
       .section-title {
         font-size: 2rem;
-        margin: 2rem 0 1.5rem;
       }
     }
     
@@ -334,19 +332,11 @@
     
     .section-title i {
       background: #3b3fda20;
-      padding: 6px;
+      padding: 8px;
       border-radius: 50%;
-      font-size: 1.2rem;
-    }
-    
-    @media (min-width: 480px) {
-      .section-title i {
-        padding: 8px;
-        font-size: 1.5rem;
-      }
     }
 
-    /* Skills cards - mobile grid */
+    /* ===== RESPONSIVE SKILLS GRID ===== */
     .skills-container {
       display: grid;
       grid-template-columns: 1fr;
@@ -354,10 +344,9 @@
       margin: 1rem 0;
     }
     
-    @media (min-width: 480px) {
+    @media (min-width: 500px) {
       .skills-container {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1.2rem;
       }
     }
     
@@ -376,7 +365,7 @@
     
     .skill-card {
       background: white;
-      border-radius: 20px;
+      border-radius: 24px;
       padding: 1.2rem 1rem;
       box-shadow: 0 10px 20px rgba(0,0,0,0.02);
       border: 1px solid #eef2f6;
@@ -384,14 +373,15 @@
       width: 100%;
     }
     
-    @media (min-width: 480px) {
+    @media (min-width: 768px) {
       .skill-card {
-        padding: 1.5rem 1.2rem;
+        padding: 2rem 1.5rem;
+        border-radius: 40px;
       }
     }
     
     .skill-card h3 {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
@@ -401,9 +391,11 @@
       text-transform: capitalize;
     }
     
-    @media (min-width: 480px) {
+    @media (min-width: 768px) {
       .skill-card h3 {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+        gap: 10px;
       }
     }
     
@@ -427,11 +419,11 @@
       text-transform: capitalize;
     }
     
-    @media (min-width: 480px) {
+    @media (min-width: 768px) {
       .skill-item {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-        gap: 6px;
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+        gap: 8px;
       }
     }
     
@@ -444,13 +436,13 @@
       font-size: 1rem;
     }
     
-    @media (min-width: 480px) {
+    @media (min-width: 768px) {
       .skill-item i, .skill-item .devicon {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
     }
 
-    /* Education grid - mobile */
+    /* ===== RESPONSIVE EDUCATION GRID ===== */
     .education-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -458,16 +450,16 @@
       margin: 1rem 0;
     }
     
-    @media (min-width: 480px) {
+    @media (min-width: 500px) {
       .education-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1.2rem;
       }
     }
     
     @media (min-width: 768px) {
       .education-grid {
         grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
       }
     }
     
@@ -479,6 +471,13 @@
       transition: transform 0.2s, border-color 0.2s;
     }
     
+    @media (min-width: 768px) {
+      .edu-card {
+        padding: 1.8rem 1.2rem;
+        border-radius: 30px;
+      }
+    }
+    
     .edu-icon {
       font-size: 2rem;
       background: linear-gradient(145deg, #3b3fda, #c43f8c);
@@ -487,16 +486,28 @@
       margin-bottom: 0.5rem;
     }
     
+    @media (min-width: 768px) {
+      .edu-icon {
+        font-size: 2.5rem;
+      }
+    }
+    
     .edu-card h3 { 
-      font-size: 1.2rem; 
+      font-size: 1.1rem; 
       text-transform: capitalize; 
+    }
+    
+    @media (min-width: 768px) {
+      .edu-card h3 {
+        font-size: 1.4rem;
+      }
     }
     
     .edu-institution { 
       font-weight: 600; 
       color: #3b3fda;
       text-transform: capitalize;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       margin: 0.3rem 0;
     }
     
@@ -506,10 +517,10 @@
       opacity: 0.7; 
       margin: 0.5rem 0 0; 
       text-transform: capitalize;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
     }
 
-    /* Internship card - mobile */
+    /* ===== RESPONSIVE INTERNSHIP CARD ===== */
     .internship-card {
       background: white;
       border-radius: 20px;
@@ -521,10 +532,11 @@
       margin: 1.5rem auto;
     }
     
-    @media (min-width: 480px) {
+    @media (min-width: 640px) {
       .internship-card {
         max-width: 500px;
-        padding: 1.8rem;
+        padding: 1.8rem 1.5rem;
+        border-radius: 30px;
       }
     }
     
@@ -535,15 +547,21 @@
       -webkit-text-fill-color: transparent;
     }
     
+    @media (min-width: 768px) {
+      .internship-icon {
+        font-size: 3.5rem;
+      }
+    }
+    
     .internship-card h3 { 
       font-size: 1.3rem; 
       margin: 0.5rem 0; 
       text-transform: capitalize; 
     }
     
-    @media (min-width: 480px) {
+    @media (min-width: 768px) {
       .internship-card h3 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
     }
     
@@ -564,9 +582,17 @@
       display: inline-flex;
       align-items: center;
       gap: 5px;
+      text-transform: capitalize;
+    }
+    
+    @media (min-width: 768px) {
+      .internship-tags span {
+        padding: 0.5rem 1.2rem;
+        font-size: 1rem;
+      }
     }
 
-    /* Projects & Certifications grids - mobile */
+    /* ===== RESPONSIVE PROJECTS & CERTIFICATIONS GRIDS ===== */
     .projects-grid,
     .certs-grid {
       display: grid;
@@ -575,11 +601,17 @@
       margin: 1rem 0;
     }
     
-    @media (min-width: 480px) {
+    @media (min-width: 500px) {
       .projects-grid,
       .certs-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 1.2rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .projects-grid,
+      .certs-grid {
+        gap: 1.5rem;
       }
     }
     
@@ -591,6 +623,20 @@
       border: 1px solid #eef2f6;
       cursor: pointer;
       text-align: center;
+      transition: transform 0.2s;
+    }
+    
+    @media (min-width: 768px) {
+      .project-card,
+      .cert-card {
+        padding: 1.8rem 1.5rem;
+        border-radius: 30px;
+      }
+    }
+    
+    .project-card:hover,
+    .cert-card:hover {
+      transform: translateY(-5px);
     }
     
     .project-icon,
@@ -599,7 +645,14 @@
       background: linear-gradient(145deg, #3b3fda, #c43f8c); 
       -webkit-background-clip: text; 
       -webkit-text-fill-color: transparent; 
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    @media (min-width: 768px) {
+      .project-icon,
+      .cert-icon {
+        font-size: 3rem;
+      }
     }
     
     .project-card h3,
@@ -607,6 +660,13 @@
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
       text-transform: capitalize;
+    }
+    
+    @media (min-width: 768px) {
+      .project-card h3,
+      .cert-card h3 {
+        font-size: 1.6rem;
+      }
     }
     
     .project-desc {
@@ -636,6 +696,14 @@
       gap: 4px;
     }
     
+    @media (min-width: 768px) {
+      .project-tags span,
+      .cert-lang-icons span {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+    
     .project-link {
       display: inline-block;
       margin-top: 0.8rem;
@@ -644,85 +712,19 @@
       font-weight: 600;
       font-size: 0.9rem;
     }
-
-    /* Contact Form - mobile */
-    .contact-section {
-      margin: 2rem 0;
-      padding: 1.5rem 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 25px;
-      border: 1px solid rgba(59, 63, 218, 0.2);
-    }
     
-    .contact-title {
-      font-size: 1.5rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
+    .cert-platform {
+      font-size: 0.8rem;
+      margin: 0.3rem 0;
       color: #3b3fda;
     }
     
-    .contact-form {
-      max-width: 100%;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-    }
-    
-    .form-group label {
-      font-weight: 600;
-      color: #3b3fda;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.9rem;
-    }
-    
-    .form-group input,
-    .form-group textarea {
-      padding: 0.7rem 1rem;
-      border-radius: 30px;
-      border: 1px solid #ccc;
-      background: white;
-      font-size: 0.9rem;
-      width: 100%;
-    }
-    
-    .form-group textarea {
-      min-height: 100px;
-    }
-    
-    .send-button {
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-    }
-    
-    @media (min-width: 480px) {
-      .send-button {
-        width: auto;
-        padding: 0.8rem 2rem;
-        margin: 0 auto;
-      }
+    .cert-date {
+      font-size: 0.75rem;
+      opacity: 0.7;
     }
 
-    /* Social Icons - mobile */
+    /* ===== RESPONSIVE SOCIAL ICONS ===== */
     .social-icons-container {
       display: flex;
       justify-content: center;
@@ -754,8 +756,28 @@
         font-size: 2.2rem;
       }
     }
+    
+    @media (min-width: 768px) {
+      .interactive-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 2.5rem;
+      }
+    }
+    
+    .interactive-icon.github:hover {
+      background: #333;
+      color: white;
+      transform: scale(1.1);
+    }
+    
+    .interactive-icon.linkedin:hover {
+      background: #0077b5;
+      color: white;
+      transform: scale(1.1);
+    }
 
-    /* Chatbot - mobile */
+    /* ===== RESPONSIVE CHATBOT ===== */
     .chatbot-button {
       position: fixed;
       bottom: 20px;
@@ -772,6 +794,7 @@
       cursor: pointer;
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
       z-index: 1000;
+      transition: all 0.3s;
       border: none;
     }
     
@@ -780,6 +803,18 @@
         width: 60px;
         height: 60px;
         font-size: 2rem;
+        bottom: 25px;
+        right: 25px;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .chatbot-button {
+        width: 70px;
+        height: 70px;
+        font-size: 2.2rem;
+        bottom: 30px;
+        right: 30px;
       }
     }
     
@@ -804,9 +839,16 @@
     @media (min-width: 480px) {
       .chatbot-container {
         left: auto;
-        right: 30px;
+        right: 25px;
         width: 350px;
         bottom: 100px;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .chatbot-container {
+        bottom: 110px;
+        right: 30px;
       }
     }
     
@@ -851,6 +893,7 @@
       border-radius: 18px;
       word-wrap: break-word;
       font-size: 0.9rem;
+      line-height: 1.4;
     }
     
     .user-message {
@@ -878,6 +921,11 @@
       background: white;
     }
     
+    body.dark .chatbot-input-area {
+      background: #1f2a3a;
+      border-color: #334155;
+    }
+    
     .chatbot-input {
       flex: 1;
       padding: 0.7rem 1rem;
@@ -887,8 +935,14 @@
       font-size: 0.9rem;
     }
     
+    body.dark .chatbot-input {
+      background: #2d3b4f;
+      border-color: #5f6b7a;
+      color: white;
+    }
+    
     .chatbot-send {
-      background: #3b3fda;
+      background: linear-gradient(145deg, #3b3fda, #c43f8c);
       color: white;
       border: none;
       width: 45px;
@@ -898,304 +952,14 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      transition: transform 0.2s;
+    }
+    
+    .chatbot-send:hover {
+      transform: scale(1.1);
     }
 
-    footer {
-      text-align: center;
-      padding: 1.5rem 1rem;
-      border-top: 1px solid #ddd;
-      margin-top: 2rem;
-      font-size: 0.85rem;
-    }
-    
-    /* Fallback styles */
-    .resume-fallback {
-      text-align: center;
-      padding: 2rem;
-    }
-    
-    .form-status {
-      text-align: center;
-      padding: 0.8rem;
-      border-radius: 30px;
-      font-size: 0.9rem;
-      display: none;
-    }
-    
-    .form-status.success {
-      background: #4caf5050;
-      color: #2e7d32;
-      display: block;
-    }
-    
-    .form-status.error {
-      background: #f4433650;
-      color: #c62828;
-      display: block;
-    }
-  </style>
-</head>
-<body>
-  <!-- Navigation - exactly as in screenshot -->
-  <nav>
-    <span class="logo">Maniram A</span>
-    <div class="nav-links">
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#internship">Internship</a>
-      <a href="#projects">Projects</a>
-      <a href="#certifications">    body.dark .cert-card, 
-    body.dark .internship-card,
-    body.dark .project-card,
-    body.dark .resume-modal-content,
-    body.dark .contact-form input,
-    body.dark .contact-form textarea {
-      background: #1e293b;
-      border-color: #334155;
-      color: #e0e4f0;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 2rem;
-    }
-
-    /* nav - responsive */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.5rem;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(8px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    
-    .logo {
-      font-weight: 800;
-      font-size: 1.5rem;
-      letter-spacing: 1px;
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-transform: capitalize;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    
-    @media (min-width: 768px) {
-      .logo {
-        font-size: 1.9rem;
-      }
-      .nav-links {
-        gap: 2.5rem;
-      }
-    }
-    
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 500;
-      color: inherit;
-      position: relative;
-      text-transform: capitalize;
-      font-size: 0.85rem;
-    }
-    
-    @media (min-width: 480px) {
-      .nav-links a {
-        font-size: 0.95rem;
-      }
-    }
-    
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background: #3b3fda;
-      transition: width 0.2s ease;
-    }
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-    
-    .theme-toggle {
-      background: none;
-      border: 1px solid #ccc;
-      border-radius: 30px;
-      padding: 0.3rem 0.8rem;
-      font-size: 0.8rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      background: white;
-      text-transform: capitalize;
-    }
-    
-    @media (min-width: 480px) {
-      .theme-toggle {
-        padding: 0.4rem 1rem;
-        font-size: 0.9rem;
-        gap: 8px;
-      }
-    }
-    
-    body.dark .theme-toggle {
-      background: #1f2937;
-      border-color: #5f6b7a;
-    }
-
-    /* Hero - responsive */
-    .hero {
-      min-height: auto;
-      padding: 1.5rem 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-    }
-    
-    .profile-image {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      margin: 0 auto 1rem;
-      overflow: hidden;
-      border: 4px solid white;
-      box-shadow: 0 10px 25px -8px rgba(0,0,0,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f0f4fa;
-    }
-    
-    @media (min-width: 480px) {
-      .profile-image {
-        width: 180px;
-        height: 180px;
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .profile-image {
-        width: 200px;
-        height: 200px;
-      }
-    }
-    
-    .profile-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    
-    .hero h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
-      text-transform: capitalize;
-      letter-spacing: 1px;
-    }
-    
-    @media (min-width: 480px) {
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .hero h1 {
-        font-size: 3.5rem;
-      }
-    }
-    
-    .hero-highlight {
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero p {
-      font-size: 1rem;
-      max-width: 600px;
-      opacity: 0.8;
-      text-transform: capitalize;
-      padding: 0 0.5rem;
-    }
-    
-    @media (min-width: 480px) {
-      .hero p {
-        font-size: 1.2rem;
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .hero p {
-        font-size: 1.3rem;
-      }
-    }
-
-    /* Resume Button - responsive */
-    .resume-button-container {
-      display: flex;
-      justify-content: center;
-      margin: 1.5rem 0;
-    }
-    .resume-button {
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 10px 20px -5px rgba(59, 63, 218, 0.5);
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: 2px solid transparent;
-    }
-    
-    @media (min-width: 480px) {
-      .resume-button {
-        padding: 1rem 2.5rem;
-        font-size: 1.3rem;
-        gap: 10px;
-      }
-    }
-    
-    .resume-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 25px -8px #3b3fda;
-      border-color: white;
-    }
-    .resume-button i {
-      font-size: 1.2rem;
-    }
-    
-    @media (min-width: 480px) {
-      .resume-button i {
-        font-size: 1.5rem;
-      }
-    }
-
-    /* Resume Modal - responsive */
+    /* ===== RESPONSIVE MODAL ===== */
     .resume-modal {
       display: none;
       position: fixed;
@@ -1210,9 +974,11 @@
       backdrop-filter: blur(8px);
       padding: 1rem;
     }
+    
     .resume-modal.show {
       display: flex;
     }
+    
     .resume-modal-content {
       background: white;
       width: 100%;
@@ -1222,15 +988,11 @@
       padding: 1rem;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
-      animation: modalPop 0.3s ease;
+      box-shadow: 0 30px 50px rgba(0,0,0,0.3);
       display: flex;
       flex-direction: column;
     }
-    @keyframes modalPop {
-      0% { transform: scale(0.9); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
+    
     .close-modal {
       position: absolute;
       top: 10px;
@@ -1238,7 +1000,6 @@
       font-size: 1.8rem;
       cursor: pointer;
       color: #3b3fda;
-      transition: 0.2s;
       background: white;
       border: none;
       z-index: 10;
@@ -1255,1536 +1016,63 @@
       .close-modal {
         top: 15px;
         right: 20px;
-        font-size: 2.5rem;
         width: 45px;
         height: 45px;
+        font-size: 2.2rem;
       }
     }
     
-    .close-modal:hover {
-      transform: scale(1.1);
-      color: #c43f8c;
-    }
     .resume-image-container {
       width: 100%;
       height: 100%;
       overflow-y: auto;
       text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
     }
+    
     .resume-image-container img {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
     }
 
-    /* Section headings - responsive */
-    .section-title {
-      font-size: 1.8rem;
-      margin: 2rem 0 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      justify-content: center;
-      text-transform: capitalize;
-      flex-wrap: wrap;
-      padding: 0 0.5rem;
-    }
-    
-    @media (min-width: 480px) {
-      .section-title {
-        font-size: 2rem;
-        gap: 10px;
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .section-title {
-        font-size: 2.5rem;
-        margin: 3rem 0 2rem;
-      }
-    }
-    
-    .section-title i {
-      background: #3b3fda20;
-      padding: 8px;
-      border-radius: 50%;
-    }
-
-    /* Skills cards - responsive grid */
-    .skills-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin: 1.5rem 0;
-      padding: 0 0.5rem;
-    }
-    
-    .skill-card {
-      background: white;
-      border-radius: 30px;
-      padding: 1.5rem 1.2rem;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.02);
-      border: 1px solid #eef2f6;
-      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-      width: 100%;
-    }
-    
-    @media (min-width: 480px) {
-      .skill-card {
-        padding: 2rem 1.8rem;
-      }
-    }
-    
-    .skill-card:hover {
-      transform: translateY(-5px);
-      border-color: #3b3fda60;
-      box-shadow: 0 15px 25px -12px #3b3fda80;
-    }
-    .skill-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      border-bottom: 2px dashed #3b3fda40;
-      padding-bottom: 0.6rem;
-      text-transform: capitalize;
-    }
-    
-    @media (min-width: 480px) {
-      .skill-card h3 {
-        font-size: 1.9rem;
-        gap: 10px;
-      }
-    }
-    
-    .skill-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-    }
-    .skill-item {
-      background: #f0f4fa;
-      padding: 0.6rem 1rem;
-      border-radius: 40px;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      text-transform: capitalize;
-    }
-    
-    @media (min-width: 480px) {
-      .skill-item {
-        padding: 0.8rem 1.5rem;
-        font-size: 1.1rem;
-        gap: 10px;
-      }
-    }
-    
-    body.dark .skill-item {
-      background: #2d3b4f;
-      color: #e0e4f0;
-    }
-    .skill-item i, .skill-item .devicon {
-      font-size: 1.2rem;
-    }
-    
-    @media (min-width: 480px) {
-      .skill-item i, .skill-item .devicon {
-        font-size: 1.8rem;
-      }
-    }
-    
-    .skill-item.click-effect {
-      animation: gradientFlash 0.6s ease-out;
-    }
-    
-    @keyframes gradientFlash {
-      0% {
-        background: linear-gradient(145deg, #3b3fda, #c43f8c);
-        color: white;
-        transform: scale(1);
-      }
-      50% {
-        background: linear-gradient(145deg, #c43f8c, #3b3fda);
-        color: white;
-        transform: scale(1.05);
-        box-shadow: 0 0 20px #3b3fda;
-      }
-      100% {
-        background: #f0f4fa;
-        color: inherit;
-        transform: scale(1);
-      }
-    }
-
-    /* Education grid - responsive */
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin: 1.5rem 0;
-      padding: 0 0.5rem;
-    }
-    
-    .edu-card {
-      background: white;
-      border-radius: 25px;
-      padding: 1.5rem 1.2rem;
-      border: 1px solid #eef2f6;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-    
-    @media (min-width: 480px) {
-      .edu-card {
-        padding: 2rem 1.5rem;
-        border-radius: 30px;
-      }
-    }
-    
-    .edu-card:hover {
-      transform: translateY(-5px);
-      border-color: #c43f8c60;
-    }
-    .edu-icon {
-      font-size: 2.2rem;
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.6rem;
-    }
-    
-    @media (min-width: 480px) {
-      .edu-icon {
-        font-size: 2.8rem;
-      }
-    }
-    
-    .edu-card h3 { 
-      font-size: 1.3rem; 
-      text-transform: capitalize; 
-    }
-    
-    @media (min-width: 480px) {
-      .edu-card h3 {
-        font-size: 1.6rem;
-      }
-    }
-    
-    .edu-institution { 
-      font-weight: 600; 
-      color: #3b3fda;
-      text-transform: capitalize;
-      font-size: 0.9rem;
-    }
-    
-    @media (min-width: 480px) {
-      .edu-institution {
-        font-size: 1rem;
-      }
-    }
-    
-    .edu-meta { 
-      display: flex; 
-      gap: 0.8rem; 
-      opacity: 0.7; 
-      margin: 0.5rem 0; 
-      text-transform: capitalize;
-      font-size: 0.85rem;
-    }
-
-    /* Internship card - responsive */
-    .internship-card {
-      background: white;
-      border-radius: 25px;
-      padding: 1.5rem 1.5rem;
-      border: 1px solid #eef2f6;
-      cursor: pointer;
-      text-align: center;
-      max-width: 500px;
-      margin: 1.5rem auto;
-      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-    }
-    
-    @media (min-width: 480px) {
-      .internship-card {
-        padding: 2rem 2rem;
-        border-radius: 30px;
-      }
-    }
-    
-    .internship-card:hover {
-      transform: translateY(-5px);
-      border-color: #3b3fda80;
-      box-shadow: 0 20px 25px -12px #3b3fda90;
-    }
-    .internship-icon {
-      font-size: 2.8rem;
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    @media (min-width: 480px) {
-      .internship-icon {
-        font-size: 3.5rem;
-      }
-    }
-    
-    .internship-card h3 { 
-      font-size: 1.5rem; 
-      margin: 0.5rem 0; 
-      text-transform: capitalize; 
-    }
-    
-    @media (min-width: 480px) {
-      .internship-card h3 {
-        font-size: 2rem;
-      }
-    }
-    
-    .internship-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-    .internship-tags span {
-      background: #e2e8f0;
-      padding: 0.4rem 0.8rem;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      text-transform: capitalize;
-    }
-    
-    @media (min-width: 480px) {
-      .internship-tags span {
-        padding: 0.5rem 1.2rem;
-        font-size: 1rem;
-        gap: 8px;
-      }
-    }
-
-    /* Projects & Certifications grids - responsive */
-    .projects-grid,
-    .certs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin: 1.5rem auto;
-      padding: 0 0.5rem;
-      max-width: 800px;
-    }
-    
-    .project-card,
-    .cert-card {
-      background: white;
-      border-radius: 25px;
-      padding: 1.5rem 1.2rem;
-      transition: transform 0.2s, border-color 0.2s;
-      border: 1px solid #eef2f6;
-      cursor: pointer;
-      text-align: center;
-    }
-    
-    @media (min-width: 480px) {
-      .project-card,
-      .cert-card {
-        padding: 2rem 1.8rem;
-        border-radius: 30px;
-      }
-    }
-    
-    .project-icon,
-    .cert-icon { 
-      font-size: 2.5rem; 
-      background: linear-gradient(145deg, #3b3fda, #c43f8c); 
-      -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent; 
-      margin-bottom: 0.8rem;
-    }
-    
-    @media (min-width: 480px) {
-      .project-icon,
-      .cert-icon {
-        font-size: 3.2rem;
-      }
-    }
-    
-    .project-card h3,
-    .cert-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-      text-transform: capitalize;
-    }
-    
-    @media (min-width: 480px) {
-      .project-card h3,
-      .cert-card h3 {
-        font-size: 1.8rem;
-      }
-    }
-    
-    .project-desc {
-      opacity: 0.8;
-      margin: 0.5rem 0;
-      font-size: 0.9rem;
-    }
-    
-    .project-tags,
-    .cert-lang-icons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-      margin: 0.8rem 0 0.3rem;
-    }
-    
-    .project-tags span,
-    .cert-lang-icons span {
-      background: #e2e8f0;
-      padding: 0.3rem 0.7rem;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-    
-    @media (min-width: 480px) {
-      .project-tags span,
-      .cert-lang-icons span {
-        padding: 0.4rem 1rem;
-        font-size: 0.9rem;
-        gap: 6px;
-      }
-    }
-
-    /* Contact Form - responsive */
-    .contact-section {
-      margin: 2rem 0.5rem;
-      padding: 1.5rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 30px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(59, 63, 218, 0.2);
-    }
-    
-    @media (min-width: 768px) {
-      .contact-section {
-        margin: 3rem auto;
-        padding: 2rem;
-        max-width: 700px;
-      }
-    }
-    
-    .contact-title {
-      font-size: 1.8rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-      color: #3b3fda;
-    }
-    
-    .contact-form {
-      max-width: 100%;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-    
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-    
-    .form-group label {
-      font-weight: 600;
-      color: #3b3fda;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.95rem;
-    }
-    
-    .form-group input,
-    .form-group textarea {
-      padding: 0.8rem 1rem;
-      border-radius: 30px;
-      border: 1px solid #ccc;
-      background: white;
-      font-size: 0.95rem;
-      transition: all 0.3s;
-      outline: none;
-      width: 100%;
-    }
-    
-    .form-group textarea {
-      min-height: 100px;
-    }
-    
-    .send-button {
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      transition: all 0.3s;
-      border: 2px solid transparent;
-      width: 100%;
-    }
-    
-    @media (min-width: 480px) {
-      .send-button {
-        width: auto;
-        padding: 1rem 2rem;
-      }
-    }
-
-    /* Social Icons - responsive */
-    .social-icons-container {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin: 2rem 0;
-      flex-wrap: wrap;
-    }
-    
-    .interactive-icon {
-      position: relative;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      background: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      color: #3b3fda;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      transition: all 0.2s;
-      text-decoration: none;
-      border: 2px solid transparent;
-    }
-    
-    @media (min-width: 480px) {
-      .interactive-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 2.5rem;
-      }
-    }
-
-    /* Chatbot - responsive */
-    .chatbot-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.8rem;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      z-index: 1000;
-      transition: all 0.3s;
-      border: none;
-    }
-    
-    @media     body.dark .cert-card, 
-    body.dark .internship-card,
-    body.dark .project-card,
-    body.dark .resume-modal-content,
-    body.dark .contact-form input,
-    body.dark .contact-form textarea {
-      background: #1e293b;
-      border-color: #334155;
-      color: #e0e4f0;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 2rem;
-    }
-
-    /* nav */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.2rem 2rem;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(8px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-    
-    .logo {
-      font-weight: 800;
-      font-size: 1.9rem;
-      letter-spacing: 1px;
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-transform: capitalize;
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      align-items: center;
-    }
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 500;
-      color: inherit;
-      position: relative;
-      text-transform: capitalize;
-      font-size: 0.95rem;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: -6px;
-      left: 0;
-      background: #3b3fda;
-      transition: width 0.2s ease;
-    }
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-    
-    .theme-toggle {
-      background: none;
-      border: 1px solid #ccc;
-      border-radius: 30px;
-      padding: 0.4rem 1rem;
-      font-size: 0.9rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: white;
-      text-transform: capitalize;
-    }
-    body.dark .theme-toggle {
-      background: #1f2937;
-      border-color: #5f6b7a;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 40vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-      padding: 2rem 1rem;
-    }
-    
-    .profile-image {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      margin: 0 auto 1.5rem;
-      overflow: hidden;
-      border: 4px solid white;
-      box-shadow: 0 10px 25px -8px rgba(0,0,0,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f0f4fa;
-    }
-    
-    .profile-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 0.5rem;
-      text-transform: capitalize;
-      letter-spacing: 1px;
-    }
-    .hero-highlight {
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero p {
-      font-size: 1.3rem;
-      max-width: 600px;
-      opacity: 0.8;
-      text-transform: capitalize;
-    }
-
-    /* Resume Button */
-    .resume-button-container {
-      display: flex;
-      justify-content: center;
-      margin: 2rem 0;
-    }
-    .resume-button {
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      color: white;
-      border: none;
-      padding: 1rem 2.5rem;
-      border-radius: 50px;
-      font-size: 1.3rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 10px 20px -5px rgba(59, 63, 218, 0.5);
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: 2px solid transparent;
-    }
-    .resume-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 25px -8px #3b3fda;
-      border-color: white;
-    }
-    .resume-button i {
-      font-size: 1.5rem;
-    }
-
-    /* Resume Modal */
-    .resume-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-      backdrop-filter: blur(8px);
-    }
-    .resume-modal.show {
-      display: flex;
-    }
-    .resume-modal-content {
-      background: white;
-      width: 95%;
-      max-width: 900px;
-      max-height: 90vh;
-      border-radius: 30px;
-      padding: 1.5rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
-      animation: modalPop 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-    @keyframes modalPop {
-      0% { transform: scale(0.9); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    .close-modal {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 2.5rem;
-      cursor: pointer;
-      color: #3b3fda;
-      transition: 0.2s;
-      background: none;
-      border: none;
-      z-index: 10;
-      background: white;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-    .close-modal:hover {
-      transform: scale(1.1);
-      color: #c43f8c;
-    }
-    .resume-image-container {
-      width: 100%;
-      height: 100%;
-      overflow-y: auto;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-    }
-    .resume-image-container img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
-    }
-    .resume-image-container img:hover {
-      transform: scale(1.02);
-    }
-    .resume-fallback {
-      text-align: center;
-      padding: 3rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-    }
-    .resume-fallback p {
-      font-size: 1.2rem;
-      color: #666;
-    }
-    .resume-fallback a {
-      color: #3b3fda;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.2rem;
-      padding: 1rem 2.5rem;
-      background: linear-gradient(145deg, #3b3fda20, #c43f8c20);
-      border-radius: 50px;
-      transition: all 0.2s;
-    }
-    .resume-fallback a:hover {
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      color: white;
-      transform: scale(1.05);
-    }
-
-    /* Section headings */
-    .section-title {
-      font-size: 2.5rem;
-      margin: 3rem 0 2rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      justify-content: center;
-      text-transform: capitalize;
-    }
-    .section-title i {
-      background: #3b3fda20;
-      padding: 10px;
-      border-radius: 50%;
-    }
-
-    /* Skills cards */
-    .skills-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      margin: 2rem 0;
-    }
-    .skill-card {
-      background: white;
-      border-radius: 40px;
-      padding: 2rem 1.8rem;
-      flex: 1 1 240px;
-      max-width: 300px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.02);
-      border: 1px solid #eef2f6;
-      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-    }
-    .skill-card:hover {
-      transform: translateY(-5px);
-      border-color: #3b3fda60;
-      box-shadow: 0 15px 25px -12px #3b3fda80;
-    }
-    .skill-card h3 {
-      font-size: 1.9rem;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border-bottom: 2px dashed #3b3fda40;
-      padding-bottom: 0.8rem;
-      text-transform: capitalize;
-    }
-    .skill-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .skill-item {
-      background: #f0f4fa;
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      text-transform: capitalize;
-    }
-    body.dark .skill-item {
-      background: #2d3b4f;
-      color: #e0e4f0;
-    }
-    .skill-item i, .skill-item .devicon {
-      font-size: 1.8rem;
-    }
-    
-    .skill-item.click-effect {
-      animation: gradientFlash 0.6s ease-out;
-    }
-    
-    @keyframes gradientFlash {
-      0% {
-        background: linear-gradient(145deg, #3b3fda, #c43f8c);
-        color: white;
-        transform: scale(1);
-      }
-      50% {
-        background: linear-gradient(145deg, #c43f8c, #3b3fda);
-        color: white;
-        transform: scale(1.05);
-        box-shadow: 0 0 20px #3b3fda;
-      }
-      100% {
-        background: #f0f4fa;
-        color: inherit;
-        transform: scale(1);
-      }
-    }
-
-    /* Education grid */
-    .education-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 2rem;
-      margin: 2rem 0 3rem;
-    }
-    .edu-card {
-      background: white;
-      border-radius: 30px;
-      padding: 2rem 1.5rem;
-      border: 1px solid #eef2f6;
-      transition: transform 0.2s, border-color 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-    .edu-card:hover {
-      transform: translateY(-5px);
-      border-color: #c43f8c60;
-    }
-    .edu-icon {
-      font-size: 2.8rem;
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.8rem;
-    }
-    .edu-card h3 { 
-      font-size: 1.6rem; 
-      text-transform: capitalize; 
-    }
-    .edu-institution { 
-      font-weight: 600; 
-      color: #3b3fda;
-      text-transform: capitalize;
-    }
-    .edu-meta { 
-      display: flex; 
-      gap: 1rem; 
-      opacity: 0.7; 
-      margin: 0.5rem 0; 
-      text-transform: capitalize;
-    }
-
-    /* Internship card */
-    .internship-card {
-      background: white;
-      border-radius: 30px;
-      padding: 2rem 2rem;
-      border: 1px solid #eef2f6;
-      cursor: pointer;
-      text-align: center;
-      max-width: 500px;
-      margin: 1.5rem auto;
-      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
-    }
-    .internship-card:hover {
-      transform: translateY(-5px);
-      border-color: #3b3fda80;
-      box-shadow: 0 20px 25px -12px #3b3fda90;
-    }
-    .internship-icon {
-      font-size: 3.5rem;
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .internship-card h3 { 
-      font-size: 2rem; 
-      margin: 0.5rem 0; 
-      text-transform: capitalize; 
-    }
-    .internship-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-    .internship-tags span {
-      background: #e2e8f0;
-      padding: 0.5rem 1.2rem;
-      border-radius: 40px;
-      font-size: 1rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      text-transform: capitalize;
-    }
-
-    /* Projects section */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 800px;
-      margin: 2rem auto;
-    }
-    .project-card {
-      background: white;
-      border-radius: 30px;
-      padding: 2rem 1.8rem;
-      transition: transform 0.2s, border-color 0.2s;
-      border: 1px solid #eef2f6;
-      cursor: pointer;
-      text-align: center;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-      border-color: #3b3fda80;
-      box-shadow: 0 20px 25px -12px #3b3fda90;
-    }
-    .project-icon { 
-      font-size: 3.2rem; 
-      background: linear-gradient(145deg, #3b3fda, #c43f8c); 
-      -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent; 
-      margin-bottom: 1rem;
-    }
-    .project-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-      text-transform: capitalize;
-    }
-    .project-desc {
-      opacity: 0.8;
-      margin: 0.8rem 0;
-    }
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      justify-content: center;
-      margin: 1rem 0 0.5rem;
-    }
-    .project-tags span {
-      background: #e2e8f0;
-      padding: 0.4rem 1rem;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .project-link {
-      display: inline-block;
-      margin-top: 1rem;
-      color: #3b3fda;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .project-link:hover {
-      text-decoration: underline;
-    }
-
-    /* Certifications grid */
-    .certs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 800px;
-      margin: 2rem auto;
-    }
-    .cert-card {
-      background: white;
-      border-radius: 30px;
-      padding: 2rem 1.8rem;
-      transition: transform 0.2s, border-color 0.2s;
-      border: 1px solid #eef2f6;
-      cursor: pointer;
-      text-align: center;
-    }
-    .cert-card:hover {
-      transform: translateY(-5px);
-      border-color: #3b3fda80;
-      box-shadow: 0 20px 25px -12px #3b3fda90;
-    }
-    .cert-icon { 
-      font-size: 3.2rem; 
-      background: linear-gradient(145deg, #3b3fda, #c43f8c); 
-      -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent; 
-      margin-bottom: 1rem;
-    }
-    .cert-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-      text-transform: capitalize;
-    }
-    .cert-platform {
-      display: inline-block;
-      background: #3b3fda20;
-      padding: 0.3rem 1.2rem;
-      border-radius: 40px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin: 0.5rem 0;
-      color: #3b3fda;
-    }
-    .cert-lang-icons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      justify-content: center;
-      margin: 1rem 0 0.5rem;
-    }
-    .cert-lang-icons span {
-      background: #e2e8f0;
-      padding: 0.4rem 1rem;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* Contact Form - New section above social icons */
-    .contact-section {
-      margin: 3rem 0 2rem;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 40px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(59, 63, 218, 0.2);
-    }
-    
-    .contact-title {
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #3b3fda;
-    }
-    
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-    
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    
-    .form-group label {
-      font-weight: 600;
-      color: #3b3fda;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    
-    .form-group input,
-    .form-group textarea {
-      padding: 1rem 1.2rem;
-      border-radius: 30px;
-      border: 1px solid #ccc;
-      background: white;
-      font-size: 1rem;
-      transition: all 0.3s;
-      outline: none;
-    }
-    
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: #3b3fda;
-      box-shadow: 0 0 0 3px rgba(59, 63, 218, 0.1);
-    }
-    
-    .form-group textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    
-    .send-button {
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-size: 1.2rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      transition: all 0.3s;
-      border: 2px solid transparent;
-      margin-top: 1rem;
-    }
-    
-    .send-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px -5px #3b3fda;
-      border-color: white;
-    }
-    
-    .send-button i {
-      font-size: 1.2rem;
-    }
-    
-    .form-status {
-      text-align: center;
-      padding: 1rem;
-      border-radius: 30px;
-      font-weight: 500;
-      display: none;
-    }
-    
-    .form-status.success {
-      background: #4caf5050;
-      color: #2e7d32;
-      display: block;
-    }
-    
-    .form-status.error {
-      background: #f4433650;
-      color: #c62828;
-      display: block;
-    }
-    
-    body.dark .form-status.success {
-      background: #2e7d3250;
-      color: #a5d6a7;
-    }
-    
-    body.dark .form-status.error {
-      background: #c6282850;
-      color: #ef9a9a;
-    }
-
-    /* Social Icons */
-    .social-icons-container {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      margin: 2rem 0 3rem;
-    }
-    
-    .interactive-icon {
-      position: relative;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      color: #3b3fda;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      transition: all 0.2s;
-      text-decoration: none;
-      border: 2px solid transparent;
-    }
-    
-    .interactive-icon.github:hover {
-      background: #333;
-      color: white;
-      transform: scale(1.1);
-    }
-    
-    .interactive-icon.linkedin:hover {
-      background: #0077b5;
-      color: white;
-      transform: scale(1.1);
-    }
-
-    /* Chatbot - Groq API Powered */
-    .chatbot-button {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 2.2rem;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      z-index: 1000;
-      transition: all 0.3s;
-      border: none;
-    }
-    .chatbot-button:hover {
-      transform: scale(1.1) rotate(5deg);
-      box-shadow: 0 15px 30px rgba(59, 63, 218, 0.5);
-    }
-    
-    .chatbot-button.click-effect {
-      animation: chatbotFlash 0.6s ease-out;
-    }
-    
-    @keyframes chatbotFlash {
-      0% {
-        background: linear-gradient(145deg, #3b3fda, #c43f8c);
-        transform: scale(1);
-      }
-      50% {
-        background: linear-gradient(145deg, #c43f8c, #3b3fda);
-        transform: scale(1.2);
-        box-shadow: 0 0 30px #c43f8c;
-      }
-      100% {
-        background: linear-gradient(145deg, #3b3fda, #c43f8c);
-        transform: scale(1);
-      }
-    }
-    
-    .chatbot-container {
-      position: fixed;
-      bottom: 120px;
-      right: 30px;
-      width: 380px;
-      height: 550px;
-      background: white;
-      border-radius: 25px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      z-index: 1000;
-      border: 1px solid rgba(255,255,255,0.2);
-      animation: slideIn 0.3s ease;
-    }
-    @keyframes slideIn {
-      0% { transform: translateY(20px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-    .chatbot-container.open {
-      display: flex;
-    }
-    .chatbot-header {
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      color: white;
-      padding: 1.2rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .chatbot-header span {
-      font-size: 1.3rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .chatbot-header i {
-      font-size: 1.5rem;
-    }
-    .close-chat {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.8rem;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-    .close-chat:hover {
-      transform: scale(1.2);
-    }
-    .chatbot-messages {
-      flex: 1;
-      padding: 1.2rem;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      background: #f8fafc;
-    }
-    body.dark .chatbot-messages {
-      background: #1a2634;
-    }
-    .message {
-      max-width: 85%;
-      padding: 0.8rem 1.2rem;
-      border-radius: 18px;
-      word-wrap: break-word;
-      line-height: 1.5;
-      animation: messagePop 0.3s;
-    }
-    @keyframes messagePop {
-      0% { transform: scale(0.9); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-    .user-message {
-      align-self: flex-end;
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      color: white;
-      border-bottom-right-radius: 5px;
-    }
-    .bot-message {
-      align-self: flex-start;
-      background: #e9eef3;
-      color: #1e1e2f;
-      border-bottom-left-radius: 5px;
-    }
-    body.dark .bot-message {
-      background: #2d3b4f;
-      color: #e0e4f0;
-    }
-    .typing-indicator {
-      display: flex;
-      gap: 5px;
-      padding: 0.8rem 1.2rem;
-      background: #e9eef3;
-      border-radius: 18px;
-      align-self: flex-start;
-      border-bottom-left-radius: 5px;
-    }
-    .typing-indicator span {
-      width: 8px;
-      height: 8px;
-      background: #3b3fda;
-      border-radius: 50%;
-      animation: typing 1s infinite ease-in-out;
-    }
-    .typing-indicator span:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-    .typing-indicator span:nth-child(3) {
-      animation-delay: 0.4s;
-    }
-    @keyframes typing {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    .chatbot-input-area {
-      display: flex;
-      padding: 1rem;
-      border-top: 1px solid #ddd;
-      gap: 0.5rem;
-      background: white;
-    }
-    body.dark .chatbot-input-area {
-      background: #1f2a3a;
-      border-color: #334155;
-    }
-    .chatbot-input {
-      flex: 1;
-      padding: 0.8rem 1.2rem;
-      border-radius: 30px;
-      border: 1px solid #ccc;
-      outline: none;
-      font-size: 0.95rem;
-      transition: border 0.2s;
-    }
-    .chatbot-input:focus {
-      border-color: #3b3fda;
-    }
-    body.dark .chatbot-input {
-      background: #2d3b4f;
-      border-color: #5f6b7a;
-      color: white;
-    }
-    .chatbot-send {
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      color: white;
-      border: none;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .chatbot-send:hover {
-      transform: scale(1.1);
-      box-shadow: 0 5px 15px rgba(59, 63, 218, 0.4);
-    }
-    .chatbot-send i {
-      font-size: 1.3rem;
-    }
-
+    /* ===== RESPONSIVE FOOTER ===== */
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 1.5rem;
       border-top: 1px solid #ddd;
       margin-top: 2rem;
-      text-transform: capitalize;
+      font-size: 0.85rem;
+    }
+    
+    @media (min-width: 768px) {
+      footer {
+        padding: 2rem;
+        font-size: 1rem;
+      }
+    }
+
+    /* Click effect */
+    .skill-item.click-effect {
+      animation: gradientFlash 0.6s ease-out;
+    }
+    
+    @keyframes gradientFlash {
+      0% {
+        background: linear-gradient(145deg, #3b3fda, #c43f8c);
+        color: white;
+        transform: scale(1);
+      }
+      50% {
+        background: linear-gradient(145deg, #c43f8c, #3b3fda);
+        color: white;
+        transform: scale(1.05);
+        box-shadow: 0 0 20px #3b3fda;
+      }
+      100% {
+        background: #f0f4fa;
+        color: inherit;
+        transform: scale(1);
+      }
     }
   </style>
 </head>
@@ -2803,7 +1091,7 @@
   </nav>
 
   <main class="container">
-    <!-- Hero with auto-fitting profile image -->
+    <!-- Hero -->
     <section class="hero">
       <div class="profile-image">
         <img src="profile.jpg" alt="Maniram A" onerror="this.src='https://ui-avatars.com/api/?name=Maniram+A&size=200&length=2&background=3b3fda&color=fff&bold=true'">
@@ -2825,10 +1113,8 @@
         <button class="close-modal" id="closeModalBtn"><i class="fas fa-times"></i></button>
         <div class="resume-image-container">
           <img src="resume.jpg" alt="Maniram A Resume" id="resumeImage" onerror="this.style.display='none'; document.getElementById('resumeFallback').style.display='flex';">
-          <div class="resume-fallback" id="resumeFallback" style="display: none;">
-            <p>⚠️ Unable to load resume image</p>
-            <p>Please make sure 'resume.jpg' is in the same folder as this HTML file.</p>
-            <a href="resume.jpg" download="Maniram_Resume.jpg">📥 Download Resume</a>
+          <div class="resume-fallback" id="resumeFallback" style="display: none; padding: 2rem; text-align: center;">
+            <p>Unable to load resume image. <a href="resume.jpg" download>Download Resume</a></p>
           </div>
         </div>
       </div>
@@ -2839,7 +1125,7 @@
       <h2 class="section-title"><i class="fas fa-code"></i> Skills</h2>
       <div class="skills-container">
         <div class="skill-card">
-          <h3><i class="fas fa-laptop-code"></i> Front End</h3>
+          <h3><i class="fas fa-laptop-code"></i> Front Only</h3>
           <div class="skill-items">
             <span class="skill-item"><i class="devicon-html5-plain colored"></i> Html</span>
             <span class="skill-item"><i class="devicon-css3-plain colored"></i> Css</span>
@@ -2888,7 +1174,7 @@
           <div class="edu-meta"><span>2027</span><span>Cgpa 7.8</span></div>
         </div>
         <div class="edu-card">
-          <div class="edu-icon"><i class="fas fa-university"></i></div>
+          <div class="edu-icon"><i class="fas fa-diploma"></i></div>
           <h3>Diploma</h3>
           <div class="edu-institution">Mspvl Polytechnic</div>
           <div class="edu-meta"><span>2024</span><span>93.82%</span></div>
@@ -2914,7 +1200,7 @@
       <div class="internship-card" tabindex="0" role="button" aria-label="internship details">
         <div class="internship-icon"><i class="fas fa-mobile-alt"></i></div>
         <h3>Lowcode Development</h3>
-        <p style="font-size: 1.2rem; margin: 0.5rem 0;">Zitacad · 70 Hours · June 2023</p>
+        <p style="font-size: 1rem; margin: 0.5rem 0;">Zitacad · 70 Hours · June 2023</p>
         <div class="internship-tags">
           <span><i class="fas fa-bolt"></i> Lowcode</span>
           <span><i class="fas fa-file-code"></i> Zoho Creator</span>
@@ -2930,7 +1216,7 @@
         <div class="project-card" tabindex="0" role="button" aria-label="Weather app project">
           <div class="project-icon"><i class="fas fa-cloud-sun-rain"></i></div>
           <h3>Weather App</h3>
-          <p class="project-desc">A responsive weather application that shows real-time weather data using API</p>
+          <p class="project-desc">Real-time weather data using API</p>
           <div class="project-tags">
             <span><i class="devicon-html5-plain colored"></i> Html</span>
             <span><i class="devicon-css3-plain colored"></i> Css</span>
@@ -2938,11 +1224,10 @@
             <span><i class="fas fa-cloud"></i> Api</span>
           </div>
           <a href="https://maniram-meteora.vercel.app/" class="project-link" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-code-branch"></i> View Project
+            View Project
           </a>
         </div>
       </div>
-      <p style="text-align: center; opacity: 0.7; margin-top: 1rem;">✨ Click project card for demo ✨</p>
     </section>
 
     <!-- Certifications -->
@@ -2951,51 +1236,24 @@
       <div class="certs-grid">
         <div class="cert-card" tabindex="0" role="button" aria-label="Lowcode certification">
           <div class="cert-icon"><i class="fas fa-mobile-alt"></i></div>
-          <h3>Lowcode App Development</h3>
-          <div class="cert-platform"><i class="fas fa-cloud"></i> Platform: Zoho Creator</div>
+          <h3>Lowcode App Dev</h3>
+          <div class="cert-platform">Zoho Creator</div>
           <div class="cert-lang-icons">
             <span><i class="fas fa-bolt"></i> Lowcode</span>
-            <span><i class="fas fa-database"></i> Deluge</span>
           </div>
-          <div class="cert-date">June 2023 · 70 Hours Workshop</div>
+          <div class="cert-date">June 2023</div>
         </div>
         <div class="cert-card" tabindex="0" role="button" aria-label="IBM web development certification">
           <div class="cert-icon"><i class="fab fa-html5"></i></div>
-          <h3>Html, Css, Javascript</h3>
-          <div class="cert-platform"><i class="fas fa-chalkboard-teacher"></i> Platform: IBM SkillsNetwork</div>
+          <h3>HTML, CSS, JS</h3>
+          <div class="cert-platform">IBM SkillsNetwork</div>
           <div class="cert-lang-icons">
             <span><i class="devicon-html5-plain colored"></i> Html5</span>
-            <span><i class="devicon-css3-plain colored"></i> Css3</span>
-            <span><i class="devicon-javascript-plain colored"></i> Javascript</span>
           </div>
-          <div class="cert-date">November 2025 · Beginners Course</div>
+          <div class="cert-date">Nov 2025</div>
         </div>
       </div>
-      <p style="text-align: center; opacity: 0.7; margin-top: 1rem;">✨ Click any cert for more info ✨</p>
     </section>
-
-    <!-- Contact Form Section - Above social icons -->
-    <div class="contact-section">
-      <h2 class="contact-title"><i class="fas fa-paper-plane"></i> Get In Touch</h2>
-      <form class="contact-form" id="contactForm">
-        <div class="form-group">
-          <label><i class="fas fa-user"></i> Your Name</label>
-          <input type="text" id="name" placeholder="Enter your name" required>
-        </div>
-        <div class="form-group">
-          <label><i class="fas fa-envelope"></i> Your Email</label>
-          <input type="email" id="email" placeholder="Enter your email" required>
-        </div>
-        <div class="form-group">
-          <label><i class="fas fa-comment"></i> Your Message</label>
-          <textarea id="message" placeholder="Type your message here..." required></textarea>
-        </div>
-        <button type="submit" class="send-button" id="sendMessageBtn">
-          <i class="fas fa-paper-plane"></i> Send Message
-        </button>
-        <div class="form-status" id="formStatus"></div>
-      </form>
-    </div>
 
     <!-- Social Icons -->
     <div class="social-icons-container">
@@ -3009,29 +1267,27 @@
   </main>
 
   <footer>
-    <p>✦ Maniram A · Portfolio with Groq AI Assistant ✦</p>
+    <p>✦ Maniram A · Fully Responsive Portfolio ✦</p>
   </footer>
 
-  <!-- Groq API Powered Chatbot -->
+  <!-- Chatbot -->
   <div class="chatbot-button" id="chatbotButton">
     <i class="fas fa-robot"></i>
   </div>
   <div class="chatbot-container" id="chatbotContainer">
     <div class="chatbot-header">
-      <span><i class="fas fa-brain"></i> AI Assistant (Groq)</span>
+      <span><i class="fas fa-brain"></i> AI Assistant</span>
       <button class="close-chat" id="closeChat"><i class="fas fa-times"></i></button>
     </div>
     <div class="chatbot-messages" id="chatbotMessages">
-      <div class="message bot-message">Hello! I'm powered by Groq API. I can answer questions about Maniram's portfolio, Generative AI, or anything else! What would you like to know?</div>
+      <div class="message bot-message">Hello! Ask me anything about Maniram's portfolio!</div>
     </div>
     <div class="chatbot-input-area">
-      <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Ask me anything..." autocomplete="off">
+      <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Ask me...">
       <button class="chatbot-send" id="chatbotSend"><i class="fas fa-paper-plane"></i></button>
     </div>
   </div>
 
-  <!-- Groq API Script -->
-  <script src="https://cdn.jsdelivr.net/npm/groq-sdk@0.3.2/dist/groq.umd.min.js"></script>
   <script>
     (function() {
       // Theme toggle
@@ -3039,18 +1295,18 @@
       const body = document.body;
       toggle.addEventListener('click', () => {
         body.classList.toggle('dark');
-        toggle.innerHTML = body.classList.contains('dark') ? '<i class="fas fa-sun"></i> <span>Light</span>' : '<i class="fas fa-moon"></i> <span>Dark</span>';
+        toggle.innerHTML = body.classList.contains('dark') ? 
+          '<i class="fas fa-sun"></i> <span>Light</span>' : 
+          '<i class="fas fa-moon"></i> <span>Dark</span>';
       });
 
       // Skill items click effect
       document.querySelectorAll('.skill-item').forEach(el => {
-        el.addEventListener('click', function(e) {
+        el.addEventListener('click', function() {
           this.classList.remove('click-effect');
           void this.offsetWidth;
           this.classList.add('click-effect');
-          setTimeout(() => {
-            this.classList.remove('click-effect');
-          }, 600);
+          setTimeout(() => this.classList.remove('click-effect'), 600);
         });
       });
 
@@ -3058,24 +1314,10 @@
       const viewResumeBtn = document.getElementById('viewResumeBtn');
       const resumeModal = document.getElementById('resumeModal');
       const closeModalBtn = document.getElementById('closeModalBtn');
-      const resumeImage = document.getElementById('resumeImage');
-      const resumeFallback = document.getElementById('resumeFallback');
 
       viewResumeBtn.addEventListener('click', () => {
         resumeModal.classList.add('show');
         document.body.style.overflow = 'hidden';
-        
-        if (resumeImage) {
-          resumeImage.onload = function() {
-            if (resumeFallback) resumeFallback.style.display = 'none';
-          };
-          resumeImage.onerror = function() {
-            if (resumeFallback) {
-              resumeFallback.style.display = 'flex';
-              this.style.display = 'none';
-            }
-          };
-        }
       });
 
       closeModalBtn.addEventListener('click', () => {
@@ -3097,80 +1339,26 @@
         }
       });
 
-      // Internship card click
+      // Card clicks
       document.querySelector('.internship-card')?.addEventListener('click', function() {
-        alert('✨ Internship: Lowcode App Development at Zitacad (70 Hours, June 2023)');
+        alert('✨ Internship: Lowcode Development at Zitacad (70 Hours, June 2023)');
       });
 
-      // Project card click
       document.querySelectorAll('.project-card').forEach(c => {
         c.addEventListener('click', function(e) {
           if (e.target.tagName === 'A' || e.target.closest('a')) return;
-          alert('✨ Weather App - A responsive weather application using API');
+          alert('✨ Weather App - Real-time weather app using API');
         });
       });
 
-      // Certification card click
       document.querySelectorAll('.cert-card').forEach(c => {
         c.addEventListener('click', function() {
           const title = this.querySelector('h3')?.innerText || 'Certification';
-          alert(`✨ ${title} (click for more details)`);
+          alert(`✨ ${title}`);
         });
       });
 
-      // Contact Form - Send to email
-      const contactForm = document.getElementById('contactForm');
-      const sendMessageBtn = document.getElementById('sendMessageBtn');
-      const formStatus = document.getElementById('formStatus');
-      
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
-        
-        if (!name || !email || !message) {
-          formStatus.className = 'form-status error';
-          formStatus.textContent = 'Please fill in all fields';
-          return;
-        }
-        
-        if (!email.includes('@') || !email.includes('.')) {
-          formStatus.className = 'form-status error';
-          formStatus.textContent = 'Please enter a valid email address';
-          return;
-        }
-        
-        // Create mailto link
-        const subject = encodeURIComponent(`Portfolio Message from ${name}`);
-        const body = encodeURIComponent(
-          `Name: ${name}\n` +
-          `Email: ${email}\n\n` +
-          `Message:\n${message}`
-        );
-        
-        // Open default email client
-        window.location.href = `mailto:a.maniram03@gmail.com?subject=${subject}&body=${body}`;
-        
-        // Show success message
-        formStatus.className = 'form-status success';
-        formStatus.textContent = 'Opening your email client...';
-        
-        // Clear form
-        document.getElementById('name').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('message').value = '';
-        
-        // Hide status after 5 seconds
-        setTimeout(() => {
-          formStatus.className = 'form-status';
-          formStatus.textContent = '';
-        }, 5000);
-      });
-
-      // Groq API Chatbot
-      const API_KEY = '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';
+      // Simple Chatbot
       const chatbotButton = document.getElementById('chatbotButton');
       const chatbotContainer = document.getElementById('chatbotContainer');
       const closeChat = document.getElementById('closeChat');
@@ -3178,193 +1366,57 @@
       const chatbotSend = document.getElementById('chatbotSend');
       const chatbotMessages = document.getElementById('chatbotMessages');
 
-      // Portfolio context for the AI
-      const portfolioContext = `You are a helpful AI assistant for Maniram A's portfolio. Here's information about Maniram:
-
-- Name: Maniram A
-- Title: CSE Student at GCE Tirunelveli
-- Email: a.maniram03@gmail.com
-- GitHub: https://github.com/maniram-03
-- LinkedIn: https://www.linkedin.com/in/maniram-a-ba644b2b3
-
-Skills:
-- Frontend: HTML, CSS, JavaScript
-- Programming Languages: C, Java, Python
-- Database: MySQL
-- Tools: Figma, Adobe Photoshop
-- Soft Skills: Teamwork, Communication
-
-Education:
-- B.E Computer Science at GCE Tirunelveli (2027) - CGPA 7.8
-- Diploma at MSPVL Polytechnic (2024) - 93.82%
-- HSC at SSV School, Mathapattanam (2022) - 69.5%
-- SSLC at Thirumurugan Hr. Sec. (2020) - 62.4%
-
-Internship:
-- LowCode App Development at Zitacad (June 2023) - 70 hours, Zoho Creator, Deluge
-
-Projects:
-- Weather App: Responsive weather app using API (HTML, CSS, JavaScript) - https://maniram-meteora.vercel.app/
-
-Certifications:
-1. LowCode App Development - Zoho Creator (June 2023)
-2. HTML, CSS, JavaScript - IBM SkillsNetwork (Nov 2025)
-
-You can answer questions about Maniram's portfolio, skills, education, etc. Also help with general questions about Generative AI, programming, and technology. Be friendly and informative.`;
-
-      // Message history for context
-      let messageHistory = [
-        { role: "system", content: portfolioContext }
-      ];
+      const responses = {
+        skills: "Skills: Frontend (HTML, CSS, JS), Languages (C, Java, Python), MySQL, Figma, Adobe PS, Teamwork, Communication.",
+        education: "Education: B.E CSE (2027, CGPA 7.8), Diploma (2024, 93.82%), HSC (2022, 69.5%), SSLC (2020, 62.4%).",
+        internship: "Internship: LowCode Development at Zitacad, 70 hours, June 2023 (Zoho Creator).",
+        project: "Weather App: responsive weather app using API. View at: https://maniram-meteora.vercel.app/",
+        certification: "Certifications: LowCode from Zoho (June 2023), HTML/CSS/JS from IBM (Nov 2025).",
+        github: "GitHub: https://github.com/maniram-03",
+        linkedin: "LinkedIn: https://www.linkedin.com/in/maniram-a-ba644b2b3",
+        resume: "Click the 'View Resume' button at the top.",
+        default: "Ask about skills, education, internship, projects, certifications, GitHub, LinkedIn!"
+      };
 
       function addMessage(text, isUser = false) {
-        const messageDiv = document.createElement('div');
-        messageDiv.classList.add('message');
-        messageDiv.classList.add(isUser ? 'user-message' : 'bot-message');
-        messageDiv.textContent = text;
-        chatbotMessages.appendChild(messageDiv);
+        const msg = document.createElement('div');
+        msg.classList.add('message', isUser ? 'user-message' : 'bot-message');
+        msg.textContent = text;
+        chatbotMessages.appendChild(msg);
         chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
       }
 
-      function showTypingIndicator() {
-        const indicator = document.createElement('div');
-        indicator.classList.add('typing-indicator');
-        indicator.id = 'typingIndicator';
-        for (let i = 0; i < 3; i++) {
-          const dot = document.createElement('span');
-          indicator.appendChild(dot);
-        }
-        chatbotMessages.appendChild(indicator);
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      function getResponse(input) {
+        input = input.toLowerCase();
+        if (input.includes('skill')) return responses.skills;
+        if (input.includes('education')) return responses.education;
+        if (input.includes('intern')) return responses.internship;
+        if (input.includes('project')) return responses.project;
+        if (input.includes('cert')) return responses.certification;
+        if (input.includes('git')) return responses.github;
+        if (input.includes('linkedin')) return responses.linkedin;
+        if (input.includes('resume')) return responses.resume;
+        if (input.includes('hi') || input.includes('hello')) return "Hello! How can I help?";
+        return responses.default;
       }
 
-      function removeTypingIndicator() {
-        const indicator = document.getElementById('typingIndicator');
-        if (indicator) {
-          indicator.remove();
-        }
-      }
-
-      async function getGroqResponse(userMessage) {
-        // Add user message to history
-        messageHistory.push({ role: "user", content: userMessage });
-        
-        try {
-          const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-            method: 'POST',
-            headers: {
-              'Authorization': `Bearer ${API_KEY}`,
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              model: 'openai/gpt-oss-120b',
-              messages: messageHistory,
-              temperature: 0.7,
-              max_tokens: 1000,
-              top_p: 1,
-              stream: false
-            })
-          });
-
-          if (!response.ok) {
-            throw new Error(`API error: ${response.status}`);
-          }
-
-          const data = await response.json();
-          const botResponse = data.choices[0].message.content;
-          
-          // Add bot response to history
-          messageHistory.push({ role: "assistant", content: botResponse });
-          
-          return botResponse;
-        } catch (error) {
-          console.error('Groq API error:', error);
-          return "I'm having trouble connecting to the AI service. Please try again later. You can also ask me about Maniram's portfolio information which I have stored locally.";
-        }
-      }
-
-      // Fallback responses for portfolio questions (in case API fails)
-      function getFallbackResponse(userInput) {
-        const input = userInput.toLowerCase();
-        
-        if (input.includes('skill') || input.includes('technolog')) {
-          return "Maniram's skills include: Frontend (HTML, CSS, JS), Languages (C, Java, Python), Database (MySQL), Tools (Figma, Adobe PS), Soft Skills (Teamwork, Communication).";
-        } else if (input.includes('education')) {
-          return "Maniram's education: B.E CSE at GCE Tirunelveli (2027, CGPA 7.8), Diploma at MSPVL Polytechnic (2024, 93.82%), HSC (2022, 69.5%), SSLC (2020, 62.4%).";
-        } else if (input.includes('internship')) {
-          return "Internship: LowCode Development at Zitacad, 70 hours, June 2023 (Zoho Creator).";
-        } else if (input.includes('project')) {
-          return "Weather App: responsive weather app using API. View at: https://maniram-meteora.vercel.app/";
-        } else if (input.includes('cert')) {
-          return "Certifications: 1. LowCode from Zoho Creator (June 2023), 2. HTML/CSS/JS from IBM (Nov 2025).";
-        } else if (input.includes('github')) {
-          return "GitHub: https://github.com/maniram-03";
-        } else if (input.includes('linkedin')) {
-          return "LinkedIn: https://www.linkedin.com/in/maniram-a-ba644b2b3";
-        } else if (input.includes('resume')) {
-          return "Click the 'View Resume' button at the top of the page to see Maniram's resume.";
-        } else {
-          return null;
-        }
-      }
-
-      chatbotButton.addEventListener('click', function() {
-        this.classList.remove('click-effect');
-        void this.offsetWidth;
-        this.classList.add('click-effect');
-        
-        setTimeout(() => {
-          chatbotContainer.classList.toggle('open');
-          if (chatbotContainer.classList.contains('open')) {
-            chatbotInput.focus();
-          }
-        }, 200);
-        
-        setTimeout(() => {
-          this.classList.remove('click-effect');
-        }, 600);
+      chatbotButton.addEventListener('click', () => {
+        chatbotContainer.classList.toggle('open');
+        if (chatbotContainer.classList.contains('open')) chatbotInput.focus();
       });
 
-      closeChat.addEventListener('click', () => {
-        chatbotContainer.classList.remove('open');
-      });
+      closeChat.addEventListener('click', () => chatbotContainer.classList.remove('open'));
 
-      async function handleUserMessage() {
-        const message = chatbotInput.value.trim();
-        if (message === '') return;
-        
-        addMessage(message, true);
+      function handleMessage() {
+        const msg = chatbotInput.value.trim();
+        if (!msg) return;
+        addMessage(msg, true);
         chatbotInput.value = '';
-        
-        // Check if we have a fallback response first (for portfolio questions)
-        const fallback = getFallbackResponse(message);
-        if (fallback) {
-          setTimeout(() => {
-            addMessage(fallback, false);
-          }, 500);
-          return;
-        }
-        
-        // Show typing indicator
-        showTypingIndicator();
-        
-        try {
-          // Try to get response from Groq API
-          const response = await getGroqResponse(message);
-          removeTypingIndicator();
-          addMessage(response, false);
-        } catch (error) {
-          removeTypingIndicator();
-          addMessage("I'm having trouble connecting. Please try again.", false);
-        }
+        setTimeout(() => addMessage(getResponse(msg), false), 500);
       }
 
-      chatbotSend.addEventListener('click', handleUserMessage);
-      chatbotInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-          handleUserMessage();
-        }
-      });
+      chatbotSend.addEventListener('click', handleMessage);
+      chatbotInput.addEventListener('keypress', (e) => e.key === 'Enter' && handleMessage());
 
       document.addEventListener('click', (e) => {
         if (!chatbotContainer.contains(e.target) && !chatbotButton.contains(e.target) && chatbotContainer.classList.contains('open')) {
@@ -3375,6 +1427,4 @@ You can answer questions about Maniram's portfolio, skills, education, etc. Also
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
 </body>
-
 </html>
-
