@@ -949,764 +949,6 @@
     
     .form-group input:focus,
     .form-group textarea:focus {
-         body.dark .cert-card, 
-    body.dark .internship-card,
-    body.dark .project-card,
-    body.dark .resume-modal-content,
-    body.dark .contact-form input,
-    body.dark .contact-form textarea {
-      background: #1e293b;
-      border-color: #334155;
-      color: #e0e4f0;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem;
-    }
-    
-    @media (min-width: 640px) {
-      .container {
-        padding: 1.5rem;
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .container {
-        padding: 2rem;
-      }
-    }
-
-    /* ===== RESPONSIVE NAVIGATION ===== */
-    nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(8px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      gap: 0.8rem;
-    }
-    
-    @media (min-width: 640px) {
-      nav {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 1rem 2rem;
-      }
-    }
-    
-    .logo {
-      font-weight: 800;
-      font-size: 1.5rem;
-      letter-spacing: 1px;
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-transform: capitalize;
-    }
-    
-    @media (min-width: 768px) {
-      .logo {
-        font-size: 1.9rem;
-      }
-    }
-    
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.8rem 1.2rem;
-      align-items: center;
-    }
-    
-    @media (min-width: 768px) {
-      .nav-links {
-        gap: 2rem;
-      }
-    }
-    
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 500;
-      color: inherit;
-      position: relative;
-      text-transform: capitalize;
-      font-size: 0.85rem;
-      white-space: nowrap;
-    }
-    
-    @media (min-width: 640px) {
-      .nav-links a {
-        font-size: 0.9rem;
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .nav-links a {
-        font-size: 0.95rem;
-      }
-    }
-    
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background: #3b3fda;
-      transition: width 0.2s ease;
-    }
-    
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-    
-    .theme-toggle {
-      background: none;
-      border: 1px solid #ccc;
-      border-radius: 30px;
-      padding: 0.3rem 0.8rem;
-      font-size: 0.8rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      background: white;
-      text-transform: capitalize;
-      white-space: nowrap;
-    }
-    
-    body.dark .theme-toggle {
-      background: #1f2937;
-      border-color: #5f6b7a;
-    }
-
-    /* ===== RESPONSIVE HERO ===== */
-    .hero {
-      min-height: auto;
-      padding: 2rem 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex-direction: column;
-    }
-    
-    .profile-image {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      margin: 0 auto 1.2rem;
-      overflow: hidden;
-      border: 4px solid white;
-      box-shadow: 0 10px 25px -8px rgba(0,0,0,0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f0f4fa;
-    }
-    
-    @media (min-width: 480px) {
-      .profile-image {
-        width: 160px;
-        height: 160px;
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .profile-image {
-        width: 200px;
-        height: 200px;
-      }
-    }
-    
-    .profile-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    
-    .hero h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      text-transform: capitalize;
-      letter-spacing: 1px;
-    }
-    
-    @media (min-width: 480px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .hero h1 {
-        font-size: 3.5rem;
-      }
-    }
-    
-    .hero-highlight {
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    .hero p {
-      font-size: 1rem;
-      max-width: 600px;
-      opacity: 0.8;
-      text-transform: capitalize;
-      padding: 0 0.5rem;
-      line-height: 1.5;
-    }
-    
-    @media (min-width: 480px) {
-      .hero p {
-        font-size: 1.1rem;
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .hero p {
-        font-size: 1.3rem;
-      }
-    }
-
-    /* ===== RESPONSIVE RESUME BUTTON ===== */
-    .resume-button-container {
-      display: flex;
-      justify-content: center;
-      margin: 1.5rem 0 0.5rem;
-    }
-    
-    .resume-button {
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      color: white;
-      border: none;
-      padding: 0.8rem 1.8rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 10px 20px -5px rgba(59, 63, 218, 0.5);
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: 2px solid transparent;
-    }
-    
-    @media (min-width: 768px) {
-      .resume-button {
-        padding: 1rem 2.5rem;
-        font-size: 1.3rem;
-        gap: 10px;
-      }
-    }
-    
-    .resume-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 25px -8px #3b3fda;
-      border-color: white;
-    }
-    
-    .resume-button i {
-      font-size: 1.2rem;
-    }
-
-    /* ===== RESPONSIVE SECTION TITLES ===== */
-    .section-title {
-      font-size: 1.8rem;
-      margin: 2rem 0 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      justify-content: center;
-      text-transform: capitalize;
-      flex-wrap: wrap;
-    }
-    
-    @media (min-width: 480px) {
-      .section-title {
-        font-size: 2rem;
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .section-title {
-        font-size: 2.5rem;
-        margin: 3rem 0 2rem;
-      }
-    }
-    
-    .section-title i {
-      background: #3b3fda20;
-      padding: 8px;
-      border-radius: 50%;
-    }
-
-    /* ===== RESPONSIVE SKILLS GRID ===== */
-    .skills-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      margin: 1rem 0;
-    }
-    
-    @media (min-width: 500px) {
-      .skills-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .skills-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
-      }
-    }
-    
-    @media (min-width: 1024px) {
-      .skills-container {
-        grid-template-columns: repeat(5, 1fr);
-      }
-    }
-    
-    .skill-card {
-      background: white;
-      border-radius: 24px;
-      padding: 1.2rem 1rem;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.02);
-      border: 1px solid #eef2f6;
-      transition: transform 0.2s, border-color 0.2s;
-      width: 100%;
-    }
-    
-    @media (min-width: 768px) {
-      .skill-card {
-        padding: 2rem 1.5rem;
-        border-radius: 40px;
-      }
-    }
-    
-    .skill-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      border-bottom: 2px dashed #3b3fda40;
-      padding-bottom: 0.5rem;
-      text-transform: capitalize;
-    }
-    
-    @media (min-width: 768px) {
-      .skill-card h3 {
-        font-size: 1.6rem;
-        margin-bottom: 1.5rem;
-        gap: 10px;
-      }
-    }
-    
-    .skill-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    
-    .skill-item {
-      background: #f0f4fa;
-      padding: 0.4rem 0.8rem;
-      border-radius: 30px;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 0.8rem;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      text-transform: capitalize;
-    }
-    
-    @media (min-width: 768px) {
-      .skill-item {
-        padding: 0.6rem 1.2rem;
-        font-size: 1rem;
-        gap: 8px;
-      }
-    }
-    
-    body.dark .skill-item {
-      background: #2d3b4f;
-      color: #e0e4f0;
-    }
-    
-    .skill-item i, .skill-item .devicon {
-      font-size: 1rem;
-    }
-    
-    @media (min-width: 768px) {
-      .skill-item i, .skill-item .devicon {
-        font-size: 1.4rem;
-      }
-    }
-
-    /* ===== RESPONSIVE EDUCATION GRID ===== */
-    .education-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      margin: 1rem 0;
-    }
-    
-    @media (min-width: 500px) {
-      .education-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .education-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.5rem;
-      }
-    }
-    
-    .edu-card {
-      background: white;
-      border-radius: 20px;
-      padding: 1.2rem 1rem;
-      border: 1px solid #eef2f6;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-    
-    @media (min-width: 768px) {
-      .edu-card {
-        padding: 1.8rem 1.2rem;
-        border-radius: 30px;
-      }
-    }
-    
-    .edu-icon {
-      font-size: 2rem;
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5rem;
-    }
-    
-    @media (min-width: 768px) {
-      .edu-icon {
-        font-size: 2.5rem;
-      }
-    }
-    
-    .edu-card h3 { 
-      font-size: 1.1rem; 
-      text-transform: capitalize; 
-    }
-    
-    @media (min-width: 768px) {
-      .edu-card h3 {
-        font-size: 1.4rem;
-      }
-    }
-    
-    .edu-institution { 
-      font-weight: 600; 
-      color: #3b3fda;
-      text-transform: capitalize;
-      font-size: 0.8rem;
-      margin: 0.3rem 0;
-    }
-    
-    .edu-meta { 
-      display: flex; 
-      gap: 0.8rem; 
-      opacity: 0.7; 
-      margin: 0.5rem 0 0; 
-      text-transform: capitalize;
-      font-size: 0.75rem;
-    }
-
-    /* ===== RESPONSIVE INTERNSHIP CARD ===== */
-    .internship-card {
-      background: white;
-      border-radius: 20px;
-      padding: 1.5rem 1rem;
-      border: 1px solid #eef2f6;
-      cursor: pointer;
-      text-align: center;
-      max-width: 100%;
-      margin: 1.5rem auto;
-    }
-    
-    @media (min-width: 640px) {
-      .internship-card {
-        max-width: 500px;
-        padding: 1.8rem 1.5rem;
-        border-radius: 30px;
-      }
-    }
-    
-    .internship-icon {
-      font-size: 2.5rem;
-      background: linear-gradient(145deg, #3b3fda, #c43f8c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    
-    @media (min-width: 768px) {
-      .internship-icon {
-        font-size: 3.5rem;
-      }
-    }
-    
-    .internship-card h3 { 
-      font-size: 1.3rem; 
-      margin: 0.5rem 0; 
-      text-transform: capitalize; 
-    }
-    
-    @media (min-width: 768px) {
-      .internship-card h3 {
-        font-size: 2rem;
-      }
-    }
-    
-    .internship-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-    
-    .internship-tags span {
-      background: #e2e8f0;
-      padding: 0.4rem 0.8rem;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      text-transform: capitalize;
-    }
-    
-    @media (min-width: 768px) {
-      .internship-tags span {
-        padding: 0.5rem 1.2rem;
-        font-size: 1rem;
-      }
-    }
-
-    /* ===== RESPONSIVE PROJECTS & CERTIFICATIONS GRIDS ===== */
-    .projects-grid,
-    .certs-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      margin: 1rem 0;
-    }
-    
-    @media (min-width: 500px) {
-      .projects-grid,
-      .certs-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .projects-grid,
-      .certs-grid {
-        gap: 1.5rem;
-      }
-    }
-    
-    .project-card,
-    .cert-card {
-      background: white;
-      border-radius: 20px;
-      padding: 1.2rem 1rem;
-      border: 1px solid #eef2f6;
-      cursor: pointer;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-    
-    @media (min-width: 768px) {
-      .project-card,
-      .cert-card {
-        padding: 1.8rem 1.5rem;
-        border-radius: 30px;
-      }
-    }
-    
-    .project-card:hover,
-    .cert-card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .project-icon,
-    .cert-icon { 
-      font-size: 2.2rem; 
-      background: linear-gradient(145deg, #3b3fda, #c43f8c); 
-      -webkit-background-clip: text; 
-      -webkit-text-fill-color: transparent; 
-      margin-bottom: 0.8rem;
-    }
-    
-    @media (min-width: 768px) {
-      .project-icon,
-      .cert-icon {
-        font-size: 3rem;
-      }
-    }
-    
-    .project-card h3,
-    .cert-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-      text-transform: capitalize;
-    }
-    
-    @media (min-width: 768px) {
-      .project-card h3,
-      .cert-card h3 {
-        font-size: 1.6rem;
-      }
-    }
-    
-    .project-desc {
-      font-size: 0.85rem;
-      opacity: 0.8;
-      margin: 0.5rem 0;
-    }
-    
-    .project-tags,
-    .cert-lang-icons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      justify-content: center;
-      margin: 0.8rem 0 0.3rem;
-    }
-    
-    .project-tags span,
-    .cert-lang-icons span {
-      background: #e2e8f0;
-      padding: 0.3rem 0.6rem;
-      border-radius: 30px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-    
-    @media (min-width: 768px) {
-      .project-tags span,
-      .cert-lang-icons span {
-        padding: 0.4rem 1rem;
-        font-size: 0.9rem;
-      }
-    }
-    
-    .project-link {
-      display: inline-block;
-      margin-top: 0.8rem;
-      color: #3b3fda;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-    
-    .cert-platform {
-      font-size: 0.8rem;
-      margin: 0.3rem 0;
-      color: #3b3fda;
-    }
-    
-    .cert-date {
-      font-size: 0.75rem;
-      opacity: 0.7;
-    }
-
-    /* ===== CONTACT FORM ===== */
-    .contact-section {
-      margin: 2rem 0;
-      padding: 1.5rem 1rem;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 30px;
-      border: 1px solid rgba(59, 63, 218, 0.2);
-    }
-    
-    @media (min-width: 768px) {
-      .contact-section {
-        margin: 3rem 0;
-        padding: 2rem;
-      }
-    }
-    
-    .contact-title {
-      font-size: 1.8rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-      color: #3b3fda;
-    }
-    
-    @media (min-width: 768px) {
-      .contact-title {
-        font-size: 2rem;
-      }
-    }
-    
-    .contact-form {
-      max-width: 600px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
-    
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-    }
-    
-    .form-group label {
-      font-weight: 600;
-      color: #3b3fda;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.95rem;
-    }
-    
-    .form-group input,
-    .form-group textarea {
-      padding: 0.8rem 1rem;
-      border-radius: 30px;
-      border: 1px solid #ccc;
-      background: white;
-      font-size: 0.95rem;
-      transition: border 0.2s;
-      width: 100%;
-    }
-    
-    .form-group input:focus,
-    .form-group textarea:focus {
       outline: none;
       border-color: #3b3fda;
     }
@@ -1769,12 +1011,12 @@
     }
     
     body.dark .form-status.success {
-      background: #2e7d3250;
+      background: #1e3a2a;
       color: #a5d6a7;
     }
     
     body.dark .form-status.error {
-      background: #c6282850;
+      background: #3a1e1e;
       color: #ef9a9a;
     }
 
@@ -1937,10 +1179,6 @@
       background: #f8fafc;
     }
     
-    body.dark .chatbot-messages {
-      background: #1a2634;
-    }
-    
     .message {
       max-width: 85%;
       padding: 0.7rem 1rem;
@@ -1962,22 +1200,12 @@
       color: #1e1e2f;
     }
     
-    body.dark .bot-message {
-      background: #2d3b4f;
-      color: #e0e4f0;
-    }
-    
     .chatbot-input-area {
       display: flex;
       padding: 0.8rem;
       border-top: 1px solid #ddd;
       gap: 0.5rem;
       background: white;
-    }
-    
-    body.dark .chatbot-input-area {
-      background: #1f2a3a;
-      border-color: #334155;
     }
     
     .chatbot-input {
@@ -1987,12 +1215,6 @@
       border: 1px solid #ccc;
       outline: none;
       font-size: 0.9rem;
-    }
-    
-    body.dark .chatbot-input {
-      background: #2d3b4f;
-      border-color: #5f6b7a;
-      color: white;
     }
     
     .chatbot-send {
@@ -2128,6 +1350,29 @@
         transform: scale(1);
       }
     }
+    
+    body.dark .skill-item.click-effect {
+      animation: gradientFlashDark 0.6s ease-out;
+    }
+    
+    @keyframes gradientFlashDark {
+      0% {
+        background: linear-gradient(145deg, #3b3fda, #c43f8c);
+        color: white;
+        transform: scale(1);
+      }
+      50% {
+        background: linear-gradient(145deg, #c43f8c, #3b3fda);
+        color: white;
+        transform: scale(1.05);
+        box-shadow: 0 0 20px #6d8aff;
+      }
+      100% {
+        background: #252a33;
+        color: white;
+        transform: scale(1);
+      }
+    }
   </style>
 </head>
 <body>
@@ -2229,7 +1474,7 @@
           <div class="edu-meta"><span>2027</span><span>Cgpa 7.8</span></div>
         </div>
         <div class="edu-card">
-          <div class="edu-icon"><i class="fas fa-university"></i></div>
+          <div class="edu-icon"><i class="fas fa-diploma"></i></div>
           <h3>Diploma</h3>
           <div class="edu-institution">Mspvl Polytechnic</div>
           <div class="edu-meta"><span>2024</span><span>93.82%</span></div>
@@ -2310,7 +1555,7 @@
       </div>
     </section>
 
-    <!-- CONTACT FORM - Send email immediately on click -->
+    <!-- CONTACT FORM -->
     <section id="contact">
       <h2 class="section-title"><i class="fas fa-paper-plane"></i> Contact Me</h2>
       <div class="contact-section">
@@ -2347,7 +1592,7 @@
   </main>
 
   <footer>
-    <p>✦ Maniram A · Fully Responsive Portfolio with GitHub in Tools ✦</p>
+    <p>✦ Maniram A · B.E Computer Science Student ✦</p>
   </footer>
 
   <!-- Chatbot -->
@@ -2373,11 +1618,23 @@
       // Theme toggle
       const toggle = document.getElementById('themeToggle');
       const body = document.body;
+      
+      // Check for saved theme preference
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        body.classList.add('dark');
+        toggle.innerHTML = '<i class="fas fa-sun"></i> <span>Light</span>';
+      }
+      
       toggle.addEventListener('click', () => {
         body.classList.toggle('dark');
-        toggle.innerHTML = body.classList.contains('dark') ? 
-          '<i class="fas fa-sun"></i> <span>Light</span>' : 
-          '<i class="fas fa-moon"></i> <span>Dark</span>';
+        if (body.classList.contains('dark')) {
+          toggle.innerHTML = '<i class="fas fa-sun"></i> <span>Light</span>';
+          localStorage.setItem('theme', 'dark');
+        } else {
+          toggle.innerHTML = '<i class="fas fa-moon"></i> <span>Dark</span>';
+          localStorage.setItem('theme', 'light');
+        }
       });
 
       // Skill items click effect
@@ -2441,7 +1698,6 @@
       // CONTACT FORM - Send email immediately
       const contactForm = document.getElementById('contactForm');
       const formStatus = document.getElementById('formStatus');
-      const sendBtn = document.getElementById('sendMessageBtn');
       
       contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -2562,7 +1818,3 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
 </body>
 </html>
-
-
-
-
