@@ -22,15 +22,14 @@
       transition: background 0.3s, color 0.3s;
     }
 
-    /* ===== DARK MODE - COMPLETELY UPDATED to match screenshots ===== */
+    /* ===== DARK MODE ===== */
     body.dark {
       background: #0a0c10;
       color: #ffffff;
     }
     
-    /* Dark mode navigation */
     body.dark nav {
-      background: rgba(18, 18, 18, 0.9);
+      background: rgba(18, 18, 18, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid #2a2a2a;
     }
@@ -43,14 +42,12 @@
       background: #4a6cf7;
     }
     
-    /* Dark mode theme toggle */
     body.dark .theme-toggle {
       background: #1e1e1e;
       border-color: #3a3a3a;
       color: #ffffff;
     }
     
-    /* Dark mode cards */
     body.dark .skill-card,
     body.dark .edu-card,
     body.dark .internship-card,
@@ -62,7 +59,6 @@
       color: #ffffff;
     }
     
-    /* Dark mode card headings */
     body.dark .skill-card h3,
     body.dark .edu-card h3,
     body.dark .internship-card h3,
@@ -72,22 +68,11 @@
       border-bottom-color: #3a3f4a;
     }
     
-    /* Dark mode skill items */
     body.dark .skill-item {
       background: #252a33;
       color: #e0e0e0;
     }
     
-    body.dark .skill-item i,
-    body.dark .skill-item .devicon {
-      color: inherit;
-    }
-    
-    body.dark .skill-item:hover {
-      background: #2d3440;
-    }
-    
-    /* Dark mode education institution text */
     body.dark .edu-institution {
       color: #6d8aff;
     }
@@ -96,7 +81,6 @@
       color: #a0a0a0;
     }
     
-    /* Dark mode tags (internship, project, cert) */
     body.dark .internship-tags span,
     body.dark .project-tags span,
     body.dark .cert-lang-icons span {
@@ -104,12 +88,10 @@
       color: #e0e0e0;
     }
     
-    /* Dark mode project links */
     body.dark .project-link {
       color: #6d8aff;
     }
     
-    /* Dark mode contact form */
     body.dark .contact-form input,
     body.dark .contact-form textarea {
       background: #1e232b;
@@ -122,32 +104,17 @@
       color: #808080;
     }
     
-    body.dark .contact-form label {
-      color: #ffffff;
-    }
-    
+    body.dark .contact-form label,
     body.dark .contact-title {
       color: #ffffff;
     }
     
-    /* Dark mode social icons */
     body.dark .interactive-icon {
       background: #1e232b;
       color: #ffffff;
       border-color: #3a3f4a;
     }
     
-    body.dark .interactive-icon.github:hover {
-      background: #333;
-      color: white;
-    }
-    
-    body.dark .interactive-icon.linkedin:hover {
-      background: #0077b5;
-      color: white;
-    }
-    
-    /* Dark mode chatbot */
     body.dark .chatbot-container {
       background: #15181e;
       border-color: #2a2f3a;
@@ -173,18 +140,12 @@
       color: #ffffff;
     }
     
-    body.dark .chatbot-input::placeholder {
-      color: #808080;
-    }
-    
-    /* Dark mode footer */
     body.dark footer {
       background: #15181e;
       border-color: #2a2f3a;
       color: #a0a0a0;
     }
     
-    /* Dark mode modal */
     body.dark .resume-modal-content {
       background: #15181e;
       color: #ffffff;
@@ -193,15 +154,6 @@
     body.dark .close-modal {
       background: #1e232b;
       color: #ffffff;
-    }
-    
-    /* Dark mode fallback text */
-    body.dark .resume-fallback p {
-      color: #a0a0a0;
-    }
-    
-    body.dark .resume-fallback a {
-      color: #6d8aff;
     }
 
     .container {
@@ -223,7 +175,7 @@
       }
     }
 
-    /* ===== RESPONSIVE NAVIGATION ===== */
+    /* ===== NAVIGATION ===== */
     nav {
       display: flex;
       flex-direction: column;
@@ -292,12 +244,6 @@
       }
     }
     
-    @media (min-width: 768px) {
-      .nav-links a {
-        font-size: 0.95rem;
-      }
-    }
-    
     .nav-links a::after {
       content: '';
       position: absolute;
@@ -328,7 +274,7 @@
       white-space: nowrap;
     }
 
-    /* ===== RESPONSIVE HERO ===== */
+    /* ===== HERO ===== */
     .hero {
       min-height: auto;
       padding: 2rem 0.5rem;
@@ -417,14 +363,8 @@
         font-size: 1.1rem;
       }
     }
-    
-    @media (min-width: 768px) {
-      .hero p {
-        font-size: 1.3rem;
-      }
-    }
 
-    /* ===== RESPONSIVE RESUME BUTTON ===== */
+    /* ===== RESUME BUTTON ===== */
     .resume-button-container {
       display: flex;
       justify-content: center;
@@ -466,7 +406,102 @@
       font-size: 1.2rem;
     }
 
-    /* ===== RESPONSIVE SECTION TITLES ===== */
+    /* ===== RESUME MODAL - FIXED ===== */
+    .resume-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(8px);
+      padding: 1rem;
+    }
+    
+    .resume-modal.show {
+      display: flex !important;
+    }
+    
+    .resume-modal-content {
+      background: white;
+      width: 100%;
+      max-width: 900px;
+      max-height: 85vh;
+      border-radius: 20px;
+      padding: 1rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 30px 50px rgba(0,0,0,0.3);
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #3b3fda;
+      background: white;
+      border: none;
+      z-index: 10;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    
+    @media (min-width: 480px) {
+      .close-modal {
+        top: 15px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 2.2rem;
+      }
+    }
+    
+    .close-modal:hover {
+      transform: scale(1.1);
+      color: #c43f8c;
+    }
+    
+    .resume-image-container {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      text-align: center;
+    }
+    
+    .resume-image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    
+    .resume-fallback {
+      display: none;
+      padding: 2rem;
+      text-align: center;
+    }
+    
+    .resume-fallback a {
+      color: #3b3fda;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .resume-fallback a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== SECTION TITLES ===== */
     .section-title {
       font-size: 1.8rem;
       margin: 2rem 0 1.5rem;
@@ -484,13 +519,6 @@
       }
     }
     
-    @media (min-width: 768px) {
-      .section-title {
-        font-size: 2.5rem;
-        margin: 3rem 0 2rem;
-      }
-    }
-    
     .section-title i {
       background: #3b3fda20;
       padding: 8px;
@@ -501,7 +529,7 @@
       background: #2a2f3a;
     }
 
-    /* ===== RESPONSIVE SKILLS GRID ===== */
+    /* ===== SKILLS GRID ===== */
     .skills-container {
       display: grid;
       grid-template-columns: 1fr;
@@ -538,13 +566,6 @@
       width: 100%;
     }
     
-    @media (min-width: 768px) {
-      .skill-card {
-        padding: 2rem 1.5rem;
-        border-radius: 40px;
-      }
-    }
-    
     .skill-card h3 {
       font-size: 1.2rem;
       margin-bottom: 1rem;
@@ -554,14 +575,6 @@
       border-bottom: 2px dashed #3b3fda40;
       padding-bottom: 0.5rem;
       text-transform: capitalize;
-    }
-    
-    @media (min-width: 768px) {
-      .skill-card h3 {
-        font-size: 1.6rem;
-        margin-bottom: 1.5rem;
-        gap: 10px;
-      }
     }
     
     .skill-items {
@@ -584,25 +597,11 @@
       text-transform: capitalize;
     }
     
-    @media (min-width: 768px) {
-      .skill-item {
-        padding: 0.6rem 1.2rem;
-        font-size: 1rem;
-        gap: 8px;
-      }
-    }
-    
     .skill-item i, .skill-item .devicon {
       font-size: 1rem;
     }
-    
-    @media (min-width: 768px) {
-      .skill-item i, .skill-item .devicon {
-        font-size: 1.4rem;
-      }
-    }
 
-    /* ===== RESPONSIVE EDUCATION GRID ===== */
+    /* ===== EDUCATION GRID ===== */
     .education-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -631,13 +630,6 @@
       transition: transform 0.2s, border-color 0.2s;
     }
     
-    @media (min-width: 768px) {
-      .edu-card {
-        padding: 1.8rem 1.2rem;
-        border-radius: 30px;
-      }
-    }
-    
     .edu-icon {
       font-size: 2rem;
       background: linear-gradient(145deg, #3b3fda, #c43f8c);
@@ -646,21 +638,9 @@
       margin-bottom: 0.5rem;
     }
     
-    @media (min-width: 768px) {
-      .edu-icon {
-        font-size: 2.5rem;
-      }
-    }
-    
     .edu-card h3 { 
       font-size: 1.1rem; 
       text-transform: capitalize; 
-    }
-    
-    @media (min-width: 768px) {
-      .edu-card h3 {
-        font-size: 1.4rem;
-      }
     }
     
     .edu-institution { 
@@ -680,7 +660,7 @@
       font-size: 0.75rem;
     }
 
-    /* ===== RESPONSIVE INTERNSHIP CARD ===== */
+    /* ===== INTERNSHIP CARD ===== */
     .internship-card {
       background: white;
       border-radius: 20px;
@@ -707,22 +687,10 @@
       -webkit-text-fill-color: transparent;
     }
     
-    @media (min-width: 768px) {
-      .internship-icon {
-        font-size: 3.5rem;
-      }
-    }
-    
     .internship-card h3 { 
       font-size: 1.3rem; 
       margin: 0.5rem 0; 
       text-transform: capitalize; 
-    }
-    
-    @media (min-width: 768px) {
-      .internship-card h3 {
-        font-size: 2rem;
-      }
     }
     
     .internship-tags {
@@ -744,15 +712,8 @@
       gap: 5px;
       text-transform: capitalize;
     }
-    
-    @media (min-width: 768px) {
-      .internship-tags span {
-        padding: 0.5rem 1.2rem;
-        font-size: 1rem;
-      }
-    }
 
-    /* ===== RESPONSIVE PROJECTS & CERTIFICATIONS GRIDS ===== */
+    /* ===== PROJECTS & CERTIFICATIONS GRIDS ===== */
     .projects-grid,
     .certs-grid {
       display: grid;
@@ -768,13 +729,6 @@
       }
     }
     
-    @media (min-width: 768px) {
-      .projects-grid,
-      .certs-grid {
-        gap: 1.5rem;
-      }
-    }
-    
     .project-card,
     .cert-card {
       background: white;
@@ -784,14 +738,6 @@
       cursor: pointer;
       text-align: center;
       transition: transform 0.2s;
-    }
-    
-    @media (min-width: 768px) {
-      .project-card,
-      .cert-card {
-        padding: 1.8rem 1.5rem;
-        border-radius: 30px;
-      }
     }
     
     .project-card:hover,
@@ -808,25 +754,11 @@
       margin-bottom: 0.8rem;
     }
     
-    @media (min-width: 768px) {
-      .project-icon,
-      .cert-icon {
-        font-size: 3rem;
-      }
-    }
-    
     .project-card h3,
     .cert-card h3 {
       font-size: 1.2rem;
       margin-bottom: 0.5rem;
       text-transform: capitalize;
-    }
-    
-    @media (min-width: 768px) {
-      .project-card h3,
-      .cert-card h3 {
-        font-size: 1.6rem;
-      }
     }
     
     .project-desc {
@@ -854,14 +786,6 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-    }
-    
-    @media (min-width: 768px) {
-      .project-tags span,
-      .cert-lang-icons span {
-        padding: 0.4rem 1rem;
-        font-size: 0.9rem;
-      }
     }
     
     .project-link {
@@ -893,24 +817,11 @@
       border: 1px solid rgba(59, 63, 218, 0.2);
     }
     
-    @media (min-width: 768px) {
-      .contact-section {
-        margin: 3rem 0;
-        padding: 2rem;
-      }
-    }
-    
     .contact-title {
       font-size: 1.8rem;
       text-align: center;
       margin-bottom: 1.5rem;
       color: #3b3fda;
-    }
-    
-    @media (min-width: 768px) {
-      .contact-title {
-        font-size: 2rem;
-      }
     }
     
     .contact-form {
@@ -1020,7 +931,7 @@
       color: #ef9a9a;
     }
 
-    /* ===== RESPONSIVE SOCIAL ICONS ===== */
+    /* ===== SOCIAL ICONS ===== */
     .social-icons-container {
       display: flex;
       justify-content: center;
@@ -1053,14 +964,6 @@
       }
     }
     
-    @media (min-width: 768px) {
-      .interactive-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 2.5rem;
-      }
-    }
-    
     .interactive-icon.github:hover {
       background: #333;
       color: white;
@@ -1073,7 +976,7 @@
       transform: scale(1.1);
     }
 
-    /* ===== RESPONSIVE CHATBOT ===== */
+    /* ===== CHATBOT - FIXED ===== */
     .chatbot-button {
       position: fixed;
       bottom: 20px;
@@ -1099,19 +1002,11 @@
         width: 60px;
         height: 60px;
         font-size: 2rem;
-        bottom: 25px;
-        right: 25px;
       }
     }
     
-    @media (min-width: 768px) {
-      .chatbot-button {
-        width: 70px;
-        height: 70px;
-        font-size: 2.2rem;
-        bottom: 30px;
-        right: 30px;
-      }
+    .chatbot-button:hover {
+      transform: scale(1.1);
     }
     
     .chatbot-container {
@@ -1137,19 +1032,11 @@
         left: auto;
         right: 25px;
         width: 350px;
-        bottom: 100px;
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .chatbot-container {
-        bottom: 110px;
-        right: 30px;
       }
     }
     
     .chatbot-container.open {
-      display: flex;
+      display: flex !important;
     }
     
     .chatbot-header {
@@ -1167,6 +1054,10 @@
       color: white;
       font-size: 1.5rem;
       cursor: pointer;
+    }
+    
+    .close-chat:hover {
+      transform: scale(1.2);
     }
     
     .chatbot-messages {
@@ -1235,96 +1126,13 @@
       transform: scale(1.1);
     }
 
-    /* ===== RESPONSIVE MODAL ===== */
-    .resume-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-      backdrop-filter: blur(8px);
-      padding: 1rem;
-    }
-    
-    .resume-modal.show {
-      display: flex;
-    }
-    
-    .resume-modal-content {
-      background: white;
-      width: 100%;
-      max-width: 900px;
-      max-height: 85vh;
-      border-radius: 20px;
-      padding: 1rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 30px 50px rgba(0,0,0,0.3);
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .close-modal {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 1.8rem;
-      cursor: pointer;
-      color: #3b3fda;
-      background: white;
-      border: none;
-      z-index: 10;
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    }
-    
-    @media (min-width: 480px) {
-      .close-modal {
-        top: 15px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-        font-size: 2.2rem;
-      }
-    }
-    
-    .resume-image-container {
-      width: 100%;
-      height: 100%;
-      overflow-y: auto;
-      text-align: center;
-    }
-    
-    .resume-image-container img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    /* ===== RESPONSIVE FOOTER ===== */
+    /* ===== FOOTER ===== */
     footer {
       text-align: center;
       padding: 1.5rem;
       border-top: 1px solid #ddd;
       margin-top: 2rem;
       font-size: 0.85rem;
-    }
-    
-    @media (min-width: 768px) {
-      footer {
-        padding: 2rem;
-        font-size: 1rem;
-      }
     }
 
     /* Click effect */
@@ -1406,13 +1214,13 @@
       </div>
     </section>
 
-    <!-- Resume Modal -->
+    <!-- Resume Modal - FIXED -->
     <div class="resume-modal" id="resumeModal">
       <div class="resume-modal-content">
         <button class="close-modal" id="closeModalBtn"><i class="fas fa-times"></i></button>
         <div class="resume-image-container">
           <img src="resume.jpg" alt="Maniram A Resume" id="resumeImage" onerror="this.style.display='none'; document.getElementById('resumeFallback').style.display='block';">
-          <div id="resumeFallback" style="display: none; padding: 2rem; text-align: center;">
+          <div class="resume-fallback" id="resumeFallback">
             <p>Unable to load resume image. <a href="resume.jpg" download>Download Resume</a></p>
           </div>
         </div>
@@ -1474,7 +1282,7 @@
           <div class="edu-meta"><span>2027</span><span>Cgpa 7.8</span></div>
         </div>
         <div class="edu-card">
-          <div class="edu-icon"><i class="fas fa-diploma"></i></div>
+          <div class="edu-icon"><i class="fas fa-university"></i></div>
           <h3>Diploma</h3>
           <div class="edu-institution">Mspvl Polytechnic</div>
           <div class="edu-meta"><span>2024</span><span>93.82%</span></div>
@@ -1595,7 +1403,7 @@
     <p>✦ Maniram A · B.E Computer Science Student ✦</p>
   </footer>
 
-  <!-- Chatbot -->
+  <!-- Chatbot - FIXED -->
   <div class="chatbot-button" id="chatbotButton">
     <i class="fas fa-robot"></i>
   </div>
@@ -1615,7 +1423,7 @@
 
   <script>
     (function() {
-      // Theme toggle
+      // Theme toggle with localStorage
       const toggle = document.getElementById('themeToggle');
       const body = document.body;
       
@@ -1647,7 +1455,7 @@
         });
       });
 
-      // Resume Modal
+      // Resume Modal - FIXED
       const viewResumeBtn = document.getElementById('viewResumeBtn');
       const resumeModal = document.getElementById('resumeModal');
       const closeModalBtn = document.getElementById('closeModalBtn');
@@ -1675,6 +1483,19 @@
           document.body.style.overflow = '';
         }
       });
+
+      // Handle resume image error
+      const resumeImage = document.getElementById('resumeImage');
+      const resumeFallback = document.getElementById('resumeFallback');
+      
+      if (resumeImage) {
+        resumeImage.onerror = function() {
+          this.style.display = 'none';
+          if (resumeFallback) {
+            resumeFallback.style.display = 'block';
+          }
+        };
+      }
 
       // Card clicks
       document.querySelector('.internship-card')?.addEventListener('click', function() {
@@ -1746,7 +1567,7 @@
         }, 5000);
       });
 
-      // Simple Chatbot
+      // Chatbot - FIXED
       const chatbotButton = document.getElementById('chatbotButton');
       const chatbotContainer = document.getElementById('chatbotContainer');
       const closeChat = document.getElementById('closeChat');
@@ -1792,10 +1613,14 @@
 
       chatbotButton.addEventListener('click', () => {
         chatbotContainer.classList.toggle('open');
-        if (chatbotContainer.classList.contains('open')) chatbotInput.focus();
+        if (chatbotContainer.classList.contains('open')) {
+          chatbotInput.focus();
+        }
       });
 
-      closeChat.addEventListener('click', () => chatbotContainer.classList.remove('open'));
+      closeChat.addEventListener('click', () => {
+        chatbotContainer.classList.remove('open');
+      });
 
       function handleMessage() {
         const msg = chatbotInput.value.trim();
@@ -1806,7 +1631,11 @@
       }
 
       chatbotSend.addEventListener('click', handleMessage);
-      chatbotInput.addEventListener('keypress', (e) => e.key === 'Enter' && handleMessage());
+      chatbotInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          handleMessage();
+        }
+      });
 
       document.addEventListener('click', (e) => {
         if (!chatbotContainer.contains(e.target) && !chatbotButton.contains(e.target) && chatbotContainer.classList.contains('open')) {
