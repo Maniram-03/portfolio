@@ -406,7 +406,7 @@
       font-size: 1.2rem;
     }
 
-    /* ===== RESUME MODAL - WITH SCROLLBAR ===== */
+    /* ===== RESUME MODAL - WITH GRAY SCROLLBAR ===== */
     .resume-modal {
       display: none;
       position: fixed;
@@ -465,7 +465,7 @@
       color: #c43f8c;
     }
     
-    /* Scrollable resume image container */
+    /* Scrollable resume image container - GRAY SCROLLBAR */
     .resume-image-container {
       width: 100%;
       overflow-y: auto;
@@ -474,30 +474,39 @@
       padding: 0.5rem;
       border-radius: 10px;
       scrollbar-width: thin;
-      scrollbar-color: #3b3fda #e0e0e0;
+      scrollbar-color: #888 #f0f0f0;
     }
     
-    /* Webkit scrollbar styling */
+    /* Webkit scrollbar styling - GRAY */
     .resume-image-container::-webkit-scrollbar {
       width: 8px;
     }
     
     .resume-image-container::-webkit-scrollbar-track {
-      background: #e0e0e0;
+      background: #f0f0f0;
       border-radius: 10px;
     }
     
     .resume-image-container::-webkit-scrollbar-thumb {
-      background: #3b3fda;
+      background: #888;
       border-radius: 10px;
     }
     
     .resume-image-container::-webkit-scrollbar-thumb:hover {
-      background: #c43f8c;
+      background: #666;
     }
     
+    /* Dark mode scrollbar - darker gray */
     body.dark .resume-image-container::-webkit-scrollbar-track {
       background: #2a2f3a;
+    }
+    
+    body.dark .resume-image-container::-webkit-scrollbar-thumb {
+      background: #6b6b6b;
+    }
+    
+    body.dark .resume-image-container::-webkit-scrollbar-thumb:hover {
+      background: #888;
     }
     
     .resume-image-container img {
@@ -1245,7 +1254,7 @@
       </div>
     </section>
 
-    <!-- Resume Modal - WITH SCROLLBAR -->
+    <!-- Resume Modal - WITH GRAY SCROLLBAR -->
     <div class="resume-modal" id="resumeModal">
       <div class="resume-modal-content">
         <button class="close-modal" id="closeModalBtn"><i class="fas fa-times"></i></button>
@@ -1486,7 +1495,7 @@
         });
       });
 
-      // Resume Modal - WITH SCROLLBAR
+      // Resume Modal
       const viewResumeBtn = document.getElementById('viewResumeBtn');
       const resumeModal = document.getElementById('resumeModal');
       const closeModalBtn = document.getElementById('closeModalBtn');
